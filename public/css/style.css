@@ -1,13 +1,13 @@
 .horizontal-nav {
+    position: fixed;
     width: 100%;
     height: 5rem;
     border-style: solid;
-    background-color: transparent;
+    background-color: #fff;
     border-width: 0px;
     border-color: rgba( 0, 0, 0, .8 );
     box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
-    z-index: 5;
-    position: fixed;
+    z-index: 20;
 }
 
 .vertical-nav {
@@ -22,18 +22,30 @@
 }
 
 .page-content {
+    padding: 7rem 1.7rem 1rem 0rem;
     z-index: -5;
     width: calc(100% - 17rem);
     margin-left: 17rem;
     transition: all 0.4s;
 }
 
+.weathercontent {
+    padding: 7rem 0rem 5rem 2rem;
+    z-index: -5;
+    transition: all 0.4s;
+}
+
+.weather {
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(218, 220, 224);
+    height: 10rem;
+}
+
 #sidebar {
     padding-top: 0.5rem;
     overflow: hidden;
 }
-
-/* for toggle behavior */
 
 #sidebar.active {
     margin-left: -17rem;
@@ -42,23 +54,6 @@
 #content.active {
     width: 100%;
     margin: 0;
-}
-
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -17rem;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #content {
-        width: 100%;
-        margin: 0;
-    }
-    #content.active {
-        margin-left: 17rem;
-        width: calc(100% - 17rem);
-    }
 }
 
 .rounded-pill {
@@ -147,6 +142,13 @@ span u:hover{
         margin-top: 1rem;
         margin-left: 0;
     }
+    .page-content {
+        padding: 7rem 1.7rem 1rem 1rem;
+    }
+    .weather {
+        width: 50%;
+        margin-left: 20%;
+    }
 }
 
 @media (max-width: 600px) and (min-width: 451px){
@@ -166,6 +168,37 @@ span u:hover{
         margin-top: 1rem;
         margin-left: 1rem;
     }
+    .page-content {
+        padding: 7rem 1.7rem 1rem 1rem;
+    }
+    .weather {
+        width: 50%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -17rem;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+    #content.active {
+        margin-left: 17rem;
+        width: calc(100% - 17rem);
+    }
+}
+
+@media (max-width: 995px) and (min-width: 601px){
+    .weather {
+        width: 50%;
+        margin-left: 20%;
+    }
 }
 
 
@@ -184,11 +217,5 @@ span u:hover{
     }
     .rounded-pill {
         margin-top: 1rem;
-    }
-}
-
-@media (max-height: 570px){
-    #sidebar {
-        overflow: scroll;
     }
 }
