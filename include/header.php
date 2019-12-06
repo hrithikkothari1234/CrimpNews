@@ -32,14 +32,14 @@
         <span class="m-0 text-muted "><u>Crimp News</u></span>
 
         <!-- Search form -->
-            <div class="input-group search">
-                <input class="form-control" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <a><i class="fa fa-search"></i></a>
-                    </div>
+        <div class="input-group search">
+            <input class="form-control" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <a><i class="fa fa-search"></i></a>
                 </div>
             </div>
+        </div>
     </div>
 
     <!-- Vertical navbar -->
@@ -96,13 +96,19 @@
             </li>
             <hr>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kotharihrithik1@gmail.com" target="_blank" class="nav-link text-dark">
                     <i class="fa fa-comments mr-3 text-primary fa-fw"></i>
                     Send Feedback
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="subscribe.php" class="nav-link text-dark">
+                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                    Subscribe
+                </a>
+            </li>
             <li class="nav-item copyright">
-                Copyright &copy; <span id="year"></span>
+                <span id="year"></span>
                 <a href="index.php">
                     <i>Crimp News </i>
                 </a>

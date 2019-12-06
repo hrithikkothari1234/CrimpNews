@@ -1,6 +1,7 @@
 <?php require_once('include/header.php'); ?>
 <?php require_once('include/weather.php'); ?>
 
+
 <div class="container">
 
     <div class="row">
@@ -18,6 +19,7 @@
             </p>
         </div>
 
+    <!-- weather content -->
         <div class="weathercontent col-lg-3" id="weather">
 
             <?php get_weather(); ?>
