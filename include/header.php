@@ -22,21 +22,23 @@
 <body>
 
 
-
+    <!-- horizontal nav -->
     <div class="horizontal-nav">
         <!-- Toggle button -->
         <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
             <i class="fa fa-bars mr-2"></i>
         </button>
 
-        <span class="m-0 text-muted "><u>Crimp News</u></span>
+        <span class="m-0">
+            <u>Crimp News</u>
+        </span>
 
         <!-- Search form -->
         <div class="input-group search">
             <input class="form-control" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <a><i class="fa fa-search"></i></a>
+                    <a href="index.php"><i class="fa fa-search"></i></a>
                 </div>
             </div>
         </div>
@@ -46,7 +48,7 @@
     <div class="vertical-nav bg-white" id="sidebar">
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark bg-light">
+                <a href="index.php" class="nav-link text-dark bg-light">
                     <i class="fa fa-newspaper-o mr-3 text-primary fa-fw"></i>
                     Top Stories
                 </a>
@@ -114,7 +116,7 @@
                 </a>
             </li>
             <div style="height: 90px;">
-                <!--extra div for scrolling through upto copyright-->
+                <!--extra div for scrolling through upto copyright on smaller device-->
             </div>
         </ul>
     </div>

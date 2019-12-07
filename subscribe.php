@@ -8,7 +8,7 @@
                 <h3 class="text-center" style="font-family: Playfair Display, serif;">
                     GET MORE STUFF
                 </h3>
-                <h6 class="text-center">Subscribe us for latest letters </h6>
+                <h6 class="text-center text-muted">Subscribe us for latest letters </h6>
                 <hr>
                 <div class="row">
                     <div class="col-md-12">

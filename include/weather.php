@@ -3,11 +3,20 @@ require_once('include/config.php');
 
 function get_weather(){
 
-    global $weather_api_key;
-    $ip = "116.73.238.64"; //$_SERVER['REMOTE_ADDR'];
+    error_reporting(0);
 
+    global $weather_api_key;
+
+    // get user ip address
+    if(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else
+        $ip = $_SERVER['REMOTE_ADDR'];//'116.73.238.64'
+
+    // get lat and long of the user
     $latlong = explode(",", file_get_contents('https://ipapi.co/'.$ip.'/latlong'));
     $city = file_get_contents('https://ipapi.co/'.$ip.'/city');
+    // get user weather conditions
     $weather = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat='
     . $latlong[0] . '&lon=' . $latlong[1] . '&appid='. $weather_api_key);
 
@@ -18,24 +27,46 @@ function get_weather(){
     $temperature = $json->main->temp;
     $city;
 
+    date_default_timezone_set('Asia/Kolkata');
+    $hour = date('H');//current hour in 24hour clock
+
+    //open weather api icons.
     switch ($climate) {
         case 'Clear':
-                $icon = "01d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "01d";    //n for night
+                else
+                    $icon = "01n";    //d for day
                 break;
         case 'Clouds':
-                $icon = "02d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "02d";
+                else
+                    $icon = "02n";
                 break;
         case 'Drizzle':
-                $icon = "09d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "09d";
+                else
+                    $icon = "09n";
                 break;
         case 'Rain':
-                $icon = "10d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "10d";
+                else
+                    $icon = "10n";
                 break;
         case 'Thunderstorm':
-                $icon = "11d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "11d";
+                else
+                    $icon = "11n";
                 break;
         case 'Snow':
-                $icon = "13d";
+                if($hour < 18 && $hour > 6)
+                    $icon = "13d";
+                else
+                    $icon = "13n";
                 break;
         default:
                 $icon = "50d";
@@ -47,16 +78,17 @@ function get_weather(){
     // Convert K to degree celcius
     $temperature = $temperature - 273.15;
 
-    echo
-    "<div class='weather'>
-        <h6> {$city} </h6>
-        <hr>
-        <span class='climate'> {$description} </span>
-        <img src = 'http://openweathermap.org/img/wn/{$icon}@2x.png' >
-        <br>
-        <span class='temperature'>Temperature : {$temperature}°C </span>
-    </div>";
-
+    if($city and $description and $temperature)
+    {   echo
+        "<div class='weather'>
+            <h6> {$city} </h6>
+            <hr>
+            <span class='climate'> {$description} </span>
+            <img src = 'http://openweathermap.org/img/wn/{$icon}@2x.png' >
+            <br>
+            <span class='temperature text-muted'>Temperature : {$temperature}°C </span>
+        </div>";
+    }
 }
 
  ?>
