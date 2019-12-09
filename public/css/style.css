@@ -27,6 +27,7 @@
     width: calc(100% - 17rem);
     margin-left: 17rem;
     transition: all 0.4s;
+    overflow-x: hidden;
 }
 
 .weathercontent {
