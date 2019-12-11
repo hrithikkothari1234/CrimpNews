@@ -55,19 +55,19 @@
             </li>
             <hr>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=India" class="nav-link text-dark">
                     <i class="fa fa-flag mr-3 text-primary fa-fw"></i>
                     India
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=World" class="nav-link text-dark">
                     <i class="fa fa-globe mr-3 text-primary fa-fw"></i>
                     World
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=Tech" class="nav-link text-dark">
                     <i class="fa fa-desktop mr-3 text-primary fa-fw"></i>
                     Technology
                 </a>

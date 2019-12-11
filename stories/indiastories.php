@@ -1,14 +1,14 @@
 <?php
 
-function get_topstories(){
+function get_indiastories(){
 
     error_reporting(0);
-    
-    // Economictimes RSS
-    $rss = new DOMDocument();
-    $rss->load('https://economictimes.indiatimes.com/rssfeedstopstories.cms');
 
-    $provider = "Economic Times";
+    // NDTV.com RSS
+    $rss = new DOMDocument();
+    $rss->load('http://feeds.feedburner.com/ndtvnews-india-news');
+
+    $provider = "NDTV.com";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
@@ -17,21 +17,19 @@ function get_topstories(){
     		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
     		'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
     		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue
+    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
     		);
     	array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed); $x++) {
+    for($x=0; $x<count($feed)/2; $x++) {
     	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
     	$link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];
-        if(strlen($description)>300){
-            $description=substr($description,0,300).'...';
+        if(strlen($description)>150){
+            $description=substr($description,0,150).'...';
         }
     	$date = date('i_H_d_m', strtotime($feed[$x]['date']));
-        $image = $feed[$x]['image'];
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -85,7 +83,6 @@ function get_topstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '100' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$description}
                 </p>
@@ -98,6 +95,8 @@ function get_topstories(){
             </div>
         ";
     }
+
 }
+
 
  ?>
