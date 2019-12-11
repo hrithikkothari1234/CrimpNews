@@ -11,7 +11,7 @@ function get_weather(){
     if(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     else
-        $ip = $_SERVER['REMOTE_ADDR'];//'116.73.238.64'
+        $ip = '116.73.238.64';//$_SERVER['REMOTE_ADDR']
 
     // get lat and long of the user
     $latlong = explode(",", file_get_contents('https://ipapi.co/'.$ip.'/latlong'));
@@ -34,9 +34,9 @@ function get_weather(){
     switch ($climate) {
         case 'Clear':
                 if($hour < 18 && $hour > 6)
-                    $icon = "01d";    //n for night
+                    $icon = "01d";    //d for day
                 else
-                    $icon = "01n";    //d for day
+                    $icon = "01n";    //n for night
                 break;
         case 'Clouds':
                 if($hour < 18 && $hour > 6)
