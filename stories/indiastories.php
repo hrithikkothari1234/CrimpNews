@@ -2,6 +2,8 @@
 
 function get_indiastories(){
 
+    echo '<h5 style="padding-bottom: 2%;"> India </h5>';
+
     error_reporting(0);
 
     // NDTV.com RSS
@@ -22,7 +24,7 @@ function get_indiastories(){
     	array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
     	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
     	$link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];

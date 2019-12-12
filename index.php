@@ -4,6 +4,9 @@
 <?php require_once('stories/indiastories.php'); ?>
 <?php require_once('stories/worldstories.php'); ?>
 <?php require_once('stories/techstories.php'); ?>
+<?php require_once('stories/businessstories.php'); ?>
+<?php require_once('stories/industrystories.php'); ?>
+
 
 <div class="container">
 
@@ -12,7 +15,6 @@
     <!-- Page content holder -->
         <div class="page-content col-xl-7" id="content">
 
-            <h5 style="padding-bottom: 2%;"> Headlines </h5>
             <?php
                 if(!isset($_GET['q']))      // top stories
                     get_topstories();
@@ -22,6 +24,10 @@
                     get_worldstories();
                 else if($_GET['q'] == 'Tech' || $_GET['q'] == 'Technology')  // Technology
                     get_techstories();
+                else if($_GET['q'] == 'Business')      // Business
+                    get_businessstories();
+                else if($_GET['q'] == 'Industry')      // Industry
+                    get_industrystories();
             ?>
 
         </div>

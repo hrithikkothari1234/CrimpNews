@@ -2,6 +2,8 @@
 
 function get_topstories(){
 
+    echo '<h5 style="padding-bottom: 2%;"> Headlines </h5>';
+
     error_reporting(0);
 
     // Economictimes RSS

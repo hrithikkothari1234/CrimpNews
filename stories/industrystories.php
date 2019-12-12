@@ -1,15 +1,15 @@
 <?php
 
-function get_techstories(){
+function get_industrystories(){
 
-    echo '<h5 style="padding-bottom: 2%;"> Technology </h5>';
+    echo '<h5 style="padding-bottom: 2%;"> Industry </h5>';
 
     error_reporting(0);
 
     $rss = new DOMDocument();
 
     // Livemint RSS
-    $rss->load('https://www.livemint.com/rss/technology');
+    $rss->load('https://www.livemint.com/rss/industry');
 
     $provider = "Livemint";
     date_default_timezone_set('Asia/Kolkata');
@@ -103,7 +103,7 @@ function get_techstories(){
     }
 
     // economictimes RSS
-    $rss->load('https://economictimes.indiatimes.com/tech/rssfeeds/13357270.cms');
+    $rss->load('https://economictimes.indiatimes.com/industry/rssfeeds/13352306.cms');
 
     $provider = "Economic Times";
     date_default_timezone_set('Asia/Kolkata');

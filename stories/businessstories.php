@@ -1,14 +1,14 @@
 <?php
 
-function get_worldstories(){
+function get_businessstories(){
 
-    echo '<h5 style="padding-bottom: 2%;"> World </h5>';
+    echo '<h5 style="padding-bottom: 2%;"> Business </h5>';
 
     error_reporting(0);
 
     // NDTV.com RSS
     $rss = new DOMDocument();
-    $rss->load('http://feeds.feedburner.com/ndtvnews-world-news');
+    $rss->load('http://feeds.feedburner.com/ndtvprofit-latest');
 
     $provider = "NDTV.com";
     date_default_timezone_set('Asia/Kolkata');
