@@ -73,25 +73,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=Business" class="nav-link text-dark">
                     <i class="fa fa-pencil mr-3 text-primary fa-fw"></i>
                     Business
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=Entertainment" class="nav-link text-dark">
                     <i class="fa fa-gamepad mr-3 text-primary fa-fw"></i>
                     Entertainment
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=Health" class="nav-link text-dark">
                     <i class="fa fa-heart mr-3 text-primary fa-fw"></i>
                     Health
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-dark">
+                <a href="index.php?q=Sports" class="nav-link text-dark">
                     <i class="fa fa-bicycle mr-3 text-primary fa-fw"></i>
                     Sports
                 </a>

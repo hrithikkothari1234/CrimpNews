@@ -3,7 +3,7 @@
 function get_techstories(){
 
     error_reporting(0);
-    
+
     $rss = new DOMDocument();
 
     // Livemint RSS
@@ -74,12 +74,12 @@ function get_techstories(){
         echo "
             <div class='news'>
                 <p class='news-title'>
-                    <a href='{$link}'>
+                    <a href='{$link}' target='_blank'>
                     {$title}
                     </a>
                 </p>
                 <span class='news-provider'>
-                    <a href='{$link}'>
+                    <a href='{$link}' target='_blank'>
                         {$provider}
                     </a>
                 </span>
@@ -91,7 +91,7 @@ function get_techstories(){
                     {$description}
                 </p>
                 <p>
-                    <a href='{$link}' style='font-size: 0.8rem;'>
+                    <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
                         View full coverage
                     </a>
@@ -163,12 +163,12 @@ function get_techstories(){
         echo "
             <div class='news'>
                 <p class='news-title'>
-                    <a href='{$link}'>
+                    <a href='{$link}' target='_blank'>
                     {$title}
                     </a>
                 </p>
                 <span class='news-provider'>
-                    <a href='{$link}'>
+                    <a href='{$link}' target='_blank'>
                         {$provider}
                     </a>
                 </span>
@@ -177,7 +177,7 @@ function get_techstories(){
                 </span>
                 <img src='{$image}'width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
                 <p>
-                    <a href='{$link}' style='font-size: 0.8rem;'>
+                    <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
                         View full coverage
                     </a>
