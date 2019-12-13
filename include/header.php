@@ -73,6 +73,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="index.php?q=Budget" class="nav-link text-dark">
+                    <i class="fa fa-money mr-3 text-primary fa-fw"></i>
+                    Budget
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="index.php?q=Business" class="nav-link text-dark">
                     <i class="fa fa-pencil mr-3 text-primary fa-fw"></i>
                     Business
@@ -91,9 +97,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Health" class="nav-link text-dark">
-                    <i class="fa fa-heart mr-3 text-primary fa-fw"></i>
-                    Health
+                <a href="index.php?q=Science" class="nav-link text-dark">
+                    <i class="fa fa-flask mr-3 text-primary fa-fw"></i>
+                    Science
                 </a>
             </li>
             <li class="nav-item">

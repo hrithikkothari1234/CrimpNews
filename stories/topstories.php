@@ -25,7 +25,7 @@ function get_topstories(){
     	array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/10; $x++) {
+    for($x=0; $x<count($feed)/8; $x++) {
     	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
     	$link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];
@@ -117,7 +117,7 @@ function get_topstories(){
     	array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
     	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
     	$link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];
@@ -208,7 +208,7 @@ function get_topstories(){
         array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];

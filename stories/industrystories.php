@@ -26,7 +26,7 @@ function get_industrystories(){
         array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $image = $feed[$x]['image'];

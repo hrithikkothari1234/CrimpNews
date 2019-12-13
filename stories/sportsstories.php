@@ -1,15 +1,15 @@
 <?php
 
-function get_techstories(){
+function get_sportsstories(){
 
-    echo '<h5 style="padding-bottom: 2%;"> Technology </h5>';
+    echo '<h5 style="padding-bottom: 2%;"> Sports </h5>';
 
     error_reporting(0);
 
     $rss = new DOMDocument();
 
     // Livemint RSS
-    $rss->load('https://www.livemint.com/rss/technology');
+    $rss->load('https://www.livemint.com/rss/sports');
 
     $provider = "Livemint";
     date_default_timezone_set('Asia/Kolkata');
@@ -102,28 +102,28 @@ function get_techstories(){
         ";
     }
 
+
     // economictimes RSS
-    $rss->load('https://economictimes.indiatimes.com/tech/rssfeeds/13357270.cms');
+    $rss->load('https://economictimes.indiatimes.com/news/sports/rssfeeds/26407562.cms');
 
     $provider = "Economic Times";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->getElementsByTagName('item') as $node) {
-    	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'image' => $node->getElementsByTagName('image')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
-    		);
-    	array_push($feed, $item);
+        $item = array (
+            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue,
+            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            );
+        array_push($feed, $item);
     }
 
     for($x=0; $x<count($feed); $x++) {
-    	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
-    	$link = $feed[$x]['link'];
+        $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+        $link = $feed[$x]['link'];
         $image = $feed[$x]['image'];
-    	$date = date('i_H_d_m', strtotime($feed[$x]['date']));
+        $date = date('i_H_d_m', strtotime($feed[$x]['date']));
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -189,6 +189,3 @@ function get_techstories(){
     }
 
 }
-
-
- ?>

@@ -115,7 +115,7 @@ function get_entertainmentstories(){
         array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $date = date('i_H_d_m', strtotime($feed[$x]['date']));
