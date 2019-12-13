@@ -241,7 +241,7 @@ span u:hover{
         margin-left: 10%;
     }
     .page-content {
-        padding: 7rem 1.7rem 1rem 1rem;
+        padding: 7rem 1.2rem 1rem 1.2rem;
     }
     .weather {
         width: 70%;
@@ -259,7 +259,7 @@ span u:hover{
     }
     .news img {
         position: relative;
-        top: -20px;
+        top: -8px;
         width: 70px;
         height: 70px;
     }
@@ -286,7 +286,7 @@ span u:hover{
         margin-left: 1rem;
     }
     .page-content {
-        padding: 7rem 1.7rem 1rem 1rem;
+        padding: 7rem 1.4rem 1rem 1.4rem;
     }
     .weather {
         width: 70%;

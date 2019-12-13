@@ -6,6 +6,7 @@
 <?php require_once('stories/techstories.php'); ?>
 <?php require_once('stories/businessstories.php'); ?>
 <?php require_once('stories/industrystories.php'); ?>
+<?php require_once('stories/entertainmentstories.php'); ?>
 
 
 <div class="container">
@@ -28,6 +29,8 @@
                     get_businessstories();
                 else if($_GET['q'] == 'Industry')      // Industry
                     get_industrystories();
+                else if($_GET['q'] == 'Entertainment') //   Entertainment
+                    get_entertainmentstories();
             ?>
 
         </div>
@@ -38,5 +41,9 @@
             <?php get_weather(); ?>
 
         </div>
+
+    </div>
+
+</div> <!-- container end -->
 
 <?php require_once("include/footer.php"); ?>

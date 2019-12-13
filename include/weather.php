@@ -84,7 +84,7 @@ function get_weather(){
             <h6> {$city} </h6>
             <hr>
             <span class='climate'> {$description} </span>
-            <img src = 'http://openweathermap.org/img/wn/{$icon}@2x.png' >
+            <img src = 'https://openweathermap.org/img/wn/{$icon}@2x.png' >
             <br>
             <span class='temperature text-muted'>Temperature : {$temperature}°C </span>
         </div>";
