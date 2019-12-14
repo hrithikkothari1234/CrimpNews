@@ -35,10 +35,10 @@
 
         <!-- Search form -->
         <div class="input-group search">
-            <input class="form-control" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
+            <input class="form-control search-field" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
             <div class="input-group-append">
                 <div class="input-group-text">
-                    <a href="index.php"><i class="fa fa-search"></i></a>
+                    <i class="fa fa-search" onclick="search()"></i>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@
 <?php require_once('stories/entertainmentstories.php'); ?>
 <?php require_once('stories/sciencestories.php'); ?>
 <?php require_once('stories/sportsstories.php'); ?>
+<?php require_once('stories/searchstories.php'); ?>
 
 
 <div class="container">
@@ -41,7 +42,8 @@
                     get_sciencestories();
                 else if($_GET['q'] == 'Sports') //   Sports
                     get_sportsstories();
-
+                else                           // get stories of user search
+                    get_searchstories();
 
             ?>
 
