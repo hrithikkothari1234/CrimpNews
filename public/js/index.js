@@ -19,5 +19,5 @@ $(".search-field").keyup(function(event) {
 // search clicked
 function search(){
     var value = $(".search-field").val();
-    window.location.replace('index.php?q='+value);
+    window.location.replace('/?q='+value);
 }

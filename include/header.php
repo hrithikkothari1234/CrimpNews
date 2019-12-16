@@ -48,69 +48,69 @@
     <div class="vertical-nav bg-white" id="sidebar">
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item">
-                <a href="index.php" class="nav-link text-dark bg-light">
+                <a href="/" class="nav-link text-dark bg-light">
                     <i class="fa fa-newspaper-o mr-3 text-primary fa-fw"></i>
                     Top Stories
                 </a>
             </li>
             <hr>
             <li class="nav-item">
-                <a href="index.php?q=India" class="nav-link text-dark">
+                <a href="/?q=India" class="nav-link text-dark">
                     <i class="fa fa-flag mr-3 text-primary fa-fw"></i>
                     India
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=World" class="nav-link text-dark">
+                <a href="/?q=World" class="nav-link text-dark">
                     <i class="fa fa-globe mr-3 text-primary fa-fw"></i>
                     World
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Tech" class="nav-link text-dark">
+                <a href="/?q=Tech" class="nav-link text-dark">
                     <i class="fa fa-desktop mr-3 text-primary fa-fw"></i>
                     Technology
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Budget" class="nav-link text-dark">
+                <a href="/?q=Budget" class="nav-link text-dark">
                     <i class="fa fa-money mr-3 text-primary fa-fw"></i>
                     Budget
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Business" class="nav-link text-dark">
+                <a href="/?q=Business" class="nav-link text-dark">
                     <i class="fa fa-pencil mr-3 text-primary fa-fw"></i>
                     Business
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Industry" class="nav-link text-dark">
+                <a href="/?q=Industry" class="nav-link text-dark">
                     <i class="fa fa-industry mr-3 text-primary fa-fw"></i>
                     Industry
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Entertainment" class="nav-link text-dark">
+                <a href="/?q=Entertainment" class="nav-link text-dark">
                     <i class="fa fa-gamepad mr-3 text-primary fa-fw"></i>
                     Entertainment
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Science" class="nav-link text-dark">
+                <a href="/?q=Science" class="nav-link text-dark">
                     <i class="fa fa-flask mr-3 text-primary fa-fw"></i>
                     Science
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.php?q=Sports" class="nav-link text-dark">
+                <a href="/?q=Sports" class="nav-link text-dark">
                     <i class="fa fa-bicycle mr-3 text-primary fa-fw"></i>
                     Sports
                 </a>
             </li>
             <hr>
             <li class="nav-item">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kotharihrithik1@gmail.com" target="_blank" class="nav-link text-dark">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=simranjeet@crimpnews.in" target="_blank" class="nav-link text-dark">
                     <i class="fa fa-comments mr-3 text-primary fa-fw"></i>
                     Send Feedback
                 </a>

@@ -3,6 +3,7 @@
 function get_searchstories(){
 
     $searchValue = $_GET['q'];
+    $searchValue = ucfirst($searchValue);
 
     echo "<h5 style='padding-bottom: 2%;'> {$searchValue} </h5>";
 
