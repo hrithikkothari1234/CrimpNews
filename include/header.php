@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="public/css/style.css">
 
     <title> Crimp News</title>
-    <link rel = "icon" href =
-    "public/images/icon.jpg" type = "image/x-icon">
+    <link rel = "icon"
+    href = "https://www.crimpnews.in/wp-content/uploads/2019/08/cropped-Crimp-News-2-e1566650875324-1-192x192.png"
+    type = "image/x-icon">
 
 </head>
 
 <body>
-
 
     <!-- horizontal nav -->
     <div class="horizontal-nav">
