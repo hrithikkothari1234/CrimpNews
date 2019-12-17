@@ -42,6 +42,8 @@
                     get_sciencestories();
                 else if($_GET['q'] == 'Sports') //   Sports
                     get_sportsstories();
+                else if($_GET['q'] == 'Earlier') // old stories
+                    echo "Earlier news";
                 else                           // get stories of user search
                     get_searchstories();
 

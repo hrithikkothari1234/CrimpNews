@@ -4,8 +4,6 @@ function get_entertainmentstories(){
 
     echo '<h5 style="padding-bottom: 2%;"> Entertainment </h5>';
 
-    error_reporting(0);
-
     $rss = new DOMDocument();
 
     //  NDTV.com RSS
@@ -25,7 +23,7 @@ function get_entertainmentstories(){
         array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/2; $x++) {
+    for($x=0; $x<count($feed); $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];

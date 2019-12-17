@@ -4,8 +4,6 @@ function get_topstories(){
 
     echo '<h5 style="padding-bottom: 2%;"> Headlines </h5>';
 
-    error_reporting(0);
-
     $rss = new DOMDocument();
 
     // Livemint RSS
@@ -26,7 +24,7 @@ function get_topstories(){
         array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/5; $x++) {
+    for($x=0; $x<count($feed)/2; $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];
@@ -120,7 +118,7 @@ function get_topstories(){
     	array_push($feed, $item);
     }
 
-    for($x=0; $x<count($feed)/8; $x++) {
+    for($x=0; $x<count($feed)/2; $x++) {
     	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
     	$link = $feed[$x]['link'];
         $description = $feed[$x]['desc'];

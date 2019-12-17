@@ -4,8 +4,6 @@ function get_sportsstories(){
 
     echo '<h5 style="padding-bottom: 2%;"> Sports </h5>';
 
-    error_reporting(0);
-
     $rss = new DOMDocument();
 
     // Livemint RSS
