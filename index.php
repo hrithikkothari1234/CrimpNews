@@ -1,5 +1,6 @@
 <?php require_once('include/header.php'); ?>
 <?php require_once('include/weather.php'); ?>
+<?php require_once('include/popularnews.php'); ?>
             <!-- stories -->
 <?php require_once('stories/topstories.php'); ?>
 <?php require_once('stories/indiastories.php'); ?>
@@ -55,6 +56,8 @@
         <div class="weathercontent col-xl-3" id="weather">
 
             <?php get_weather(); ?>
+
+            <?php get_populartopics(); ?>
 
         </div>
 
