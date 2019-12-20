@@ -2,6 +2,8 @@
 
 function get_searchstories(){
 
+    error_reporting(0);
+
     $searchValue = $_GET['q'];
     $searchValue = ucfirst($searchValue);
 
