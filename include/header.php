@@ -109,12 +109,14 @@
                 </a>
             </li>
             <hr>
+        <!--
             <li class="nav-item">
                 <a href="index.php?q=Earlier" class="nav-link text-dark">
                     <i class="fa fa-hourglass-end mr-3 text-primary fa-fw"></i>
                     Earlier News
                 </a>
             </li>
+        -->
             <li class="nav-item">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=simranjeet@crimpnews.in" target="_blank" class="nav-link text-dark">
                     <i class="fa fa-comments mr-3 text-primary fa-fw"></i>
