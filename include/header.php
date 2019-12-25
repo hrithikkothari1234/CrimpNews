@@ -48,26 +48,26 @@
     <div class="vertical-nav bg-white" id="sidebar">
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item">
-                <a href="/" class="nav-link text-dark bg-light">
+                <a href="index.php" class="nav-link text-dark bg-light">
                     <i class="fa fa-newspaper-o mr-3 text-primary fa-fw"></i>
                     Top Stories
                 </a>
             </li>
             <hr>
             <li class="nav-item">
-                <a href="/?q=India" class="nav-link text-dark">
+                <a href="index.php?q=India" class="nav-link text-dark">
                     <i class="fa fa-flag mr-3 text-primary fa-fw"></i>
                     India
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/?q=World" class="nav-link text-dark">
+                <a href="index.php?q=World" class="nav-link text-dark">
                     <i class="fa fa-globe mr-3 text-primary fa-fw"></i>
                     World
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/?q=Tech" class="nav-link text-dark">
+                <a href="index.php?q=Tech" class="nav-link text-dark">
                     <i class="fa fa-desktop mr-3 text-primary fa-fw"></i>
                     Technology
                 </a>
