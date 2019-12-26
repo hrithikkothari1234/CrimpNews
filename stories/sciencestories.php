@@ -4,22 +4,20 @@ function get_sciencestories(){
 
     echo '<h5 style="padding-bottom: 2%;"> Science </h5>';
 
-    $rss = new DOMDocument();
-
     // Livemint RSS
-    $rss->load('https://www.livemint.com/rss/science');
+    $rss=simplexml_load_file('https://www.livemint.com/rss/science');
 
     $provider = "Livemint";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            'title' => $node->title,
+            'desc' => $node->description,
+            'image' => $node->image,
+            'link' => $node->link,
+            'date' => $node->pubDate
             );
         array_push($feed, $item);
     }
@@ -101,16 +99,17 @@ function get_sciencestories(){
     }
 
     // Toi RSS
-    $rss->load('https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms');
+    $rss=simplexml_load_file('https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms');
 
     $provider = "Times of India";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            'title' => $node->title,
+    		'link' => $node->link,
+    		'date' => $node->pubDate,
+            'desc' => $node->description
             );
         array_push($feed, $item);
     }
@@ -119,6 +118,26 @@ function get_sciencestories(){
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $date = date('i_H_d_m', strtotime($feed[$x]['date']));
+        $description = (string)$feed[$x]['desc'];
+
+        $result = explode('style="margin-top:3px;margin-right:5px;" src="', $description);
+        if( count($result) > 1){
+            $result = explode('" /></a>', $result[1]);
+            if( count($result) > 1)
+                $img_link = $result[0];
+        }
+        else
+            $img_link = "";
+
+        $result = explode('</a>', $description);
+        if( count($result)>1 )
+            $actual_desc = $result[1];
+        else
+            $actual_desc = $description;
+
+        if(strlen($actual_desc)>150){
+            $actual_desc=substr($actual_desc,0,150).'...';
+        }
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -172,6 +191,10 @@ function get_sciencestories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
+                <img src='{$img_link}' alt='' width = '100' height='100' class='pull-right'>
+                <p class='news-description'>
+                    {$actual_desc}
+                </p>
                 <p>
                     <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
