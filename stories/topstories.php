@@ -4,22 +4,21 @@ function get_topstories(){
 
     echo '<h5 style="padding-bottom: 2%;"> Headlines </h5>';
 
-    $rss = new DOMDocument();
-
     // Livemint RSS
-    $rss->load('https://www.livemint.com/rss/news');
+
+    $rss = simplexml_load_file('https://www.livemint.com/rss/news');
 
     $provider = "Livemint";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue
+            'title' => $node->title,
+            'desc' => $node->description,
+            'link' => $node->link,
+            'date' => $node->pubDate,
+            'image' => $node->image
             );
         array_push($feed, $item);
     }
@@ -86,7 +85,7 @@ function get_topstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '100' height='100' class='pull-right'>
+                <img src='{$image}' alt='' width = '100' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$description}
                 </p>
@@ -100,20 +99,19 @@ function get_topstories(){
         ";
     }
 
-
     //Economictimes RSS
-    $rss->load('https://economictimes.indiatimes.com/rssfeedsdefault.cms');
+    $rss=simplexml_load_file('https://economictimes.indiatimes.com/rssfeedsdefault.cms');
 
     $provider = "Economic Times";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue
+    		'title' => $node->title,
+    		'desc' => $node->description,
+    		'link' => $node->link,
+    		'date' => $node->pubDate,
+            'image' => $node->image
     		);
     	array_push($feed, $item);
     }
@@ -180,7 +178,7 @@ function get_topstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '100' height='100' class='pull-right'>
+                <img src='{$image}' alt='' width = '100' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$description}
                 </p>
@@ -195,17 +193,17 @@ function get_topstories(){
     }
 
     // The Times of India RSS
-    $rss->load('https://timesofindia.indiatimes.com/rssfeedstopstories.cms');
+    $rss=simplexml_load_file('https://timesofindia.indiatimes.com/rssfeedstopstories.cms');
 
     $provider = "The Times of India";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+    		'title' => $node->title,
+    		'desc' => $node->description,
+    		'link' => $node->link,
+    		'date' => $node->pubDate
     		);
     	array_push($feed, $item);
     }
@@ -286,17 +284,17 @@ function get_topstories(){
 
 
     // NDTV.com RSS
-    $rss->load('http://feeds.feedburner.com/ndtvnews-top-stories');
+    $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvnews-top-stories');
 
     $provider = "NDTV.com";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            'title' => $node->title,
+            'desc' => $node->description,
+            'link' => $node->link,
+            'date' => $node->pubDate
             );
         array_push($feed, $item);
     }
