@@ -5,19 +5,18 @@ function get_worldstories(){
     echo '<h5 style="padding-bottom: 2%;"> World </h5>';
 
     // NDTV.com RSS
-    $rss = new DOMDocument();
-    $rss->load('http://feeds.feedburner.com/ndtvnews-world-news');
+    $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvnews-world-news');
 
     $provider = "NDTV.com";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+    		'title' => $node->title,
+    		'desc' => $node->description,
+    		'link' => $node->link,
+    		'date' => $node->pubDate
     		);
     	array_push($feed, $item);
     }
@@ -97,16 +96,16 @@ function get_worldstories(){
     }
 
     // Toi RSS
-    $rss->load('https://timesofindia.indiatimes.com/rssfeeds/296589292.cms');
+    $rss=simplexml_load_file('https://timesofindia.indiatimes.com/rssfeeds/296589292.cms');
 
     $provider = "Times of India";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            'title' => $node->title,
+            'link' => $node->link,
+            'date' => $node->pubDate
             );
         array_push($feed, $item);
     }
