@@ -84,7 +84,7 @@ function get_budgetstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '90' height='80' class='pull-right'>
+                <img src='{$image}'width = '100' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$description}
                 </p>
@@ -184,7 +184,7 @@ function get_budgetstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
+                <img src='{$image}'width = '100' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$actual_desc}
                 </p>
