@@ -84,7 +84,7 @@ function get_techstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '90' height='80' class='pull-right'>
+                <img src='{$image}'width = '100' height='90' class='pull-right'>
                 <p class='news-description'>
                     {$description}
                 </p>
@@ -185,7 +185,7 @@ function get_techstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}' alt='' width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
+                <img src='{$image}' alt='' width = '100' height='90' class='pull-right'>
                 <p class='news-description'>
                     {$actual_desc}
                 </p>
