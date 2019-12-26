@@ -105,7 +105,8 @@ function get_worldstories(){
         $item = array (
             'title' => $node->title,
             'link' => $node->link,
-            'date' => $node->pubDate
+            'date' => $node->pubDate,
+            'desc' => $node->description
             );
         array_push($feed, $item);
     }
@@ -114,6 +115,16 @@ function get_worldstories(){
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $date = date('i_H_d_m', strtotime($feed[$x]['date']));
+        $description = (string)$feed[$x]['desc'];
+
+        $result = explode('style="margin-top:3px;margin-right:5px;" src="', $description);
+        if( count($result) > 1){
+            $result = explode('" /></a>', $result[1]);
+            if( count($result) > 1)
+                $img_link = $result[0];
+        }
+        else
+            $img_link = "";
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -167,6 +178,7 @@ function get_worldstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
+                <img src='{$img_link}' alt='' width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
                 <p>
                     <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
