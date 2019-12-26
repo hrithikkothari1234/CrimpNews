@@ -5,19 +5,18 @@ function get_businessstories(){
     echo '<h5 style="padding-bottom: 2%;"> Business </h5>';
 
     // NDTV.com RSS
-    $rss = new DOMDocument();
-    $rss->load('http://feeds.feedburner.com/ndtvprofit-latest');
+    $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvprofit-latest');
 
     $provider = "NDTV.com";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+    		'title' => $node->title,
+    		'desc' => $node->description,
+    		'link' => $node->link,
+    		'date' => $node->pubDate
     		);
     	array_push($feed, $item);
     }
@@ -97,16 +96,17 @@ function get_businessstories(){
     }
 
     // Toi RSS
-    $rss->load('https://timesofindia.indiatimes.com/rssfeeds/1898055.cms');
+    $rss=simplexml_load_file('https://timesofindia.indiatimes.com/rssfeeds/1898055.cms');
 
     $provider = "Times of India";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
         $item = array (
-            'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-            'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+            'title' => $node->title,
+            'link' => $node->link,
+            'date' => $node->pubDate,
+            'desc' => $node->description
             );
         array_push($feed, $item);
     }
@@ -115,6 +115,16 @@ function get_businessstories(){
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
         $date = date('i_H_d_m', strtotime($feed[$x]['date']));
+        $description = (string)$feed[$x]['desc'];
+
+        $result = explode('style="margin-top:3px;margin-right:5px;" src="', $description);
+        if( count($result) > 1){
+            $result = explode('" /></a>', $result[1]);
+            if( count($result) > 1)
+                $img_link = $result[0];
+        }
+        else
+            $img_link = "";
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -168,6 +178,7 @@ function get_businessstories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
+                <img src='{$img_link}' alt='' width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
                 <p>
                     <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
