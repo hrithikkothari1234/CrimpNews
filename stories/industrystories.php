@@ -184,7 +184,7 @@ function get_industrystories(){
                 <span class='news-date text-muted'>
                     . {$timespan}
                 </span>
-                <img src='{$image}'width = '90' alt='' height='80' class='pull-right' style='position: relative; top: -10px;'>
+                <img src='{$image}'width = '100' alt='' height='100' class='pull-right'>
                 <p class='news-description'>
                     {$actual_desc}
                 </p>
