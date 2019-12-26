@@ -5,20 +5,19 @@ function get_budgetstories(){
     echo '<h5 style="padding-bottom: 2%;"> Budget </h5>';
 
     // livemint RSS
-    $rss = new DOMDocument();
-    $rss->load('https://www.livemint.com/rss/budget');
+    $rss=simplexml_load_file('https://www.livemint.com/rss/budget');
 
     $provider = "Livemint";
     date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-            'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue
+    		'title' => $node->title,
+            'desc' => $node->description,
+            'image' => $node->image,
+    		'link' => $node->link,
+    		'date' => $node->pubDate
     		);
     	array_push($feed, $item);
     }
@@ -100,17 +99,18 @@ function get_budgetstories(){
     }
 
     //Economictimes RSS
-    $rss->load('https://economictimes.indiatimes.com/budget-2019/rssfeeds/67173653.cms');
+    $rss=simplexml_load_file('https://economictimes.indiatimes.com/budget-2019/rssfeeds/67173653.cms');
 
     $provider = "Economic Times";
 
     $feed = array();
-    foreach ($rss->getElementsByTagName('item') as $node) {
+    foreach ($rss->channel->item as $node) {
     	$item = array (
-    		'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-    		'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-    		'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-            'image' => $node->getElementsByTagName('image')->item(0)->nodeValue
+    		'title' => $node->title,
+    		'link' => $node->link,
+    		'date' => $node->pubDate,
+            'image' => $node->image,
+            'desc' => $node->description
     		);
     	array_push($feed, $item);
     }
@@ -120,6 +120,17 @@ function get_budgetstories(){
     	$link = $feed[$x]['link'];
     	$date = date('i_H_d_m', strtotime($feed[$x]['date']));
         $image = $feed[$x]['image'];
+        $description = (string)$feed[$x]['desc'];
+
+        $result = explode('</a>', $description);
+        if( count($result)>1 )
+            $actual_desc = $result[1];
+        else
+            $actual_desc = $description;
+
+        if(strlen($actual_desc)>150){
+            $actual_desc=substr($actual_desc,0,150).'...';
+        }
 
         // Format : Minute_Hour_Day_Month
         $current_time =  date('i_H_d_m',strtotime(date('r',time())));
@@ -174,6 +185,9 @@ function get_budgetstories(){
                     . {$timespan}
                 </span>
                 <img src='{$image}'width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
+                <p class='news-description'>
+                    {$actual_desc}
+                </p>
                 <p>
                     <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
                         <i class='fa fa-folder-open'></i>
