@@ -24,6 +24,7 @@
                 if(!isset($_GET['q'])){      // top stories
                     get_topstories();
             ?>
+                    <!-- container for all news category cards -->
                     <div class="container" style="margin-top: 1rem;">
                         <div class="row">
                             <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
