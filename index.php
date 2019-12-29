@@ -20,54 +20,53 @@
     <!-- Page content holder -->
         <div class="page-content col-lg-12">
 
-            <?php
-                if(!isset($_GET['q'])){      // top stories
-            ?>
-                    <!-- container for all news category cards -->
-                    <div class="container" style="margin-top: 1rem;">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
-                                <h6>
-                                    Tech
-                                </h6>
-                                <hr>
-                                <div class="imgBox">
-                                    <img src="https://source.unsplash.com/random/?tech"
-                                    onclick="window.location.href='index.php?q=Tech'"
-                                    alt="Tech-img">
-                                </div>
-                                <a href="index.php?q=Tech"> Latest Technical News </a>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
-                                <h6>
-                                    Business
-                                </h6>
-                                <hr>
-                                <div class="imgBox">
-                                    <img src="https://source.unsplash.com/random/?business"
-                                    onclick="window.location.href='index.php?q=Business'"
-                                    alt="Firm-img">
-                                </div>
-                                <a href="index.php?q=Business"> Latest Business News </a>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
-                                <h6>
-                                    World
-                                </h6>
-                                <hr>
-                                <div class="imgBox">
-                                    <img src="https://source.unsplash.com/random/?World"
-                                    onclick="window.location.href='index.php?q=World'"
-                                    alt="World-img">
-                                </div>
-                                <a href="index.php?q=World"> Latest World News </a>
-                            </div>
+            <!-- container for 3 news category cards -->
+            <div class="container" style="margin-top: 1rem;">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
+                        <h6>
+                            Tech
+                        </h6>
+                        <hr>
+                        <div class="imgBox">
+                            <img src="https://source.unsplash.com/random/?tech"
+                            onclick="window.location.href='index.php?q=Tech'"
+                            alt="Tech-img">
                         </div>
+                        <a href="index.php?q=Tech"> Latest Technical News </a>
                     </div>
-                    <!-- container ends -->
+                    <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
+                        <h6>
+                            Business
+                        </h6>
+                        <hr>
+                        <div class="imgBox">
+                            <img src="https://source.unsplash.com/random/?business"
+                            onclick="window.location.href='index.php?q=Business'"
+                            alt="Firm-img">
+                        </div>
+                        <a href="index.php?q=Business"> Latest Business News </a>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-sm-12 news-category-card">
+                        <h6>
+                            World
+                        </h6>
+                        <hr>
+                        <div class="imgBox">
+                            <img src="https://source.unsplash.com/random/?World"
+                            onclick="window.location.href='index.php?q=World'"
+                            alt="World-img">
+                        </div>
+                        <a href="index.php?q=World"> Latest World News </a>
+                    </div>
+                </div>
+            </div>
+            <!-- container ends -->
+
+            <!-- Actual News Stories -->
             <?php
+                if(!isset($_GET['q']))     // top stories
                     get_topstories();  // display top stories
-                }
                 else if($_GET['q'] == 'India')      // india
                     get_indiastories();
                 else if($_GET['q'] == 'World')      // world
