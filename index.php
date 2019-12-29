@@ -1,6 +1,4 @@
 <?php require_once('include/header.php'); ?>
-<?php require_once('include/weather.php'); ?>
-<?php require_once('include/popularnews.php'); ?>
             <!-- stories -->
 <?php require_once('stories/topstories.php'); ?>
 <?php require_once('stories/indiastories.php'); ?>
