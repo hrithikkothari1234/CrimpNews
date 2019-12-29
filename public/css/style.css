@@ -1,192 +1,222 @@
 body {
   background: #ffffff;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /***************************/
 /* Horizontal Nav Elements */
-.horizontal-nav {
-    position: fixed;
+
+/** Upper nav **/
+.nav-upper {
+    height: 50px;
     width: 100%;
-    height: 5rem;
-    border-style: solid;
-    background-color: #fff;
-    border-width: 0px;
-    border-color: rgba( 0, 0, 0, .8 );
-    box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
-    z-index: 20;
+    background-color: #111;
 }
 
-.fa-search:hover {
-    cursor: pointer;
+.nav-upper li a {
+    color: #fff;
 }
 
-.horizontal-nav span{
-    float: left;
+.nav-upper li a:hover {
+    color: rgb(255, 61, 46);
+}
+
+/** Middle nav **/
+
+.nav-mid {
+    width: 100%;
+}
+
+.crimp-news{
+    width: 240px;
+    font-family: Lato,sans-serif;
     font-weight: bold;
-    padding-left: 4rem;
-    font-size: 2rem;
-    padding-top: 0.8rem;
+    margin-left: 15%;
+    font-size: 2.5rem;
+    padding-top: 1.5%;
+    color: rgb(51, 51, 51);
 }
 
-span u {
-    color: #d67459;
-}
-
-span u:hover{
-    color: #979797;
+.crimp-news:hover{
+    color: rgb(255, 61, 46);
     cursor: pointer;
 }
 
-.rounded-pill {
-    justify-content: center;
-    float:left;
-    margin-top: 1rem;
-    margin-left: 2rem;
+.crimp-news:hover span{
+    color: #333;
 }
 
-.search {
-    width: 50%;
-    float:right;
-    background-color: rgba(0, 0, 0, 0);
-    padding-top: 1rem;
-    padding-right: 15%;
-    border-radius: 50%;
+.crimp-news span {
+    color: rgb(255, 61, 46);
 }
 
-/*************************/
-/* Vertical Nav Elements */
-
-.vertical-nav {
-    min-width: 17rem;
-    width: 17rem;
-    height: 100vh;
-    position: fixed;
-    top: 5rem;
-    left: 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
+.nav-mid .text-muted {
+    font-family: Lato,sans-serif;
+    padding-left: 17%;
 }
 
-#sidebar {
-    padding-top: 0.5rem;
-    overflow: hidden;
-}
+/** Lower nav **/
 
-#sidebar.active {
-    margin-left: -17rem;
-}
-
-#content.active {
+.nav-lower {
+    margin-top: 15px;
     width: 100%;
-    margin: 0;
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgb(255, 61, 46);
+    border-bottom-color: rgba(0, 0, 0, 0.075);
+    border-top-color: rgba(0, 0, 0, 0.075);
+    border-right-color: rgb(68, 68, 68);
+    border-left-color: rgb(68, 68, 68);
 }
 
-.display-mobile {
+.nav-lower ul {
+    padding-top: 8px;
+    margin-left: 14%;
+}
+
+.nav-lower li a {
+    font-family: Poppins;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 25px;
+    font-size: 1.2rem;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/***********************/
+/* dropdown categories */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
     display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
 }
 
-#sidebar hr {
-    width: 100%;
-    border-bottom: 1px dashed #fff;
-    margin-left: 15px;
-    margin-right: 15px;
+.dropdown-content a {
+    font-size: 0.7rem;
+    font-family: Helvetica, Georgia, sans-serif;
 }
 
-.copyright {
-    padding-top: 0.5rem;
-    padding-left: 25px;
-    font-size: 0.8rem;
+.dropdown-content hr {
+    margin-top: 0;
+    color: #fff;
 }
 
-.copyright i{
-    color: #d67459;
-    font-weight: 500;
+.dropdown-content a:hover {
+    background-color: rgb(255, 61, 46);
 }
 
-.nav-item:hover {
-    background-color: #f8f9fa;
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/************/
+/* Top News */
+
+.top-news h6 {
+    height: 23px;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    width: 8%;
+    margin-left: 15%;
+    margin-top: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+}
+
+#topHeadlines {
+    color: #32407b;
+    text-decoration: none;
+    position: absolute;
+    margin-left: 30%;
+    margin-top: -30px;
+}
+
+#topHeadlines:hover {
+    color: rgb(255, 61, 46);
 }
 
 /********************/
-/* Weather Content */
+/* News Category Cards Content */
 
-.weathercontent {
-    padding: 10rem 0 5rem 2rem;
-    transition: all 0.4s;
-}
-
-.weather {
-    border-style: solid;
-    border-color: rgb(218, 220, 224);
-    height: 15rem;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
-}
-
-.weather h6 {
-    padding-left: 34%;
-    padding-top: 3%;
-    color: rgb(95, 99, 104);
-    font-weight: 500;
-    font-style: italic;
-}
-
-.climate {
-    color: rgb(95, 99, 104);
-    font-weight: 450;
-    padding-left: 15%;
-    padding-bottom: 10%;
-}
-
-.weather img {
-    padding-left: 20%;
-}
-
-.weather img:hover {
-    animation: skew 3s infinite;
-    transform: skew(20deg);
-}
-
-.weather hr {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.temperature {
-    padding-left: 15%;
+.news-category-card h6 {
+    font-family: Poppins;
+    font-weight: 600;
     font-size: 1.2rem;
+    color: #fff;
+    background-color: rgb(255, 61, 46);
+    width: 90px;
+    padding: 6px;
+    text-align: center;
+}
+
+.news-category-card hr {
+    position: relative;
+    top: -18px;
+    height: 0.6px;
+    margin-left: 60px;
+    background-color: rgb(255, 61, 46);
+}
+
+.news-category-card a {
+    margin-left: 20%;
+    text-decoration: none;
+    color: rgb(255, 61, 46);
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: Poppins;
+}
+
+.news-category-card a:hover {
+    color: #000;
+}
+
+.news-category-card img {
+    width: 341px;
+    height: 300px;
+}
+
+.imgBox {
+    position: relative;
+    margin-top: -10px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imgBox img {
+    display: block;
+    transition: .3s ease-in-out;
+}
+
+.imgBox:hover img {
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
 /*****************/
 /* Popular topics*/
 
-.popular-topics {
-    padding: 2rem 0 0 5rem;
-}
-
-.popular-topics h5 {
-    margin-bottom: 0;
-}
-
-.popular-topics a {
-    font-family: Roboto, RobotoDraft, Helvetica;
-    font-size: 0.9rem;
-    margin-left: 0;
-}
 
 /*********************/
-/* Main News Content*/
+/* Main Page Content*/
 
 .page-content {
-    padding: 7rem 1.7rem 1rem 0;
-    z-index: 0;
-    width: calc(100% - 17rem);
-    margin-left: 17rem;
-    transition: all 0.4s;
-    overflow-x: hidden;
+    margin-top: 2rem;
 }
 
 .news {
@@ -233,219 +263,110 @@ span u:hover{
     font-family: Helvetica, Georgia;
 }
 
-.news img {
-    position: relative;
-    top: 28px;
-}
 
 /***********************************/
 /* Media Queries For Responsiveness*/
 
 @media (max-width: 450px) and (min-width: 150px){
-    .search {
-        display: none;
+    .nav-mid .text-muted {
+        padding-left: 23%;
     }
-    .horizontal-nav span{
-        float: left;
-        font-weight: bold;
-        font-size: 1.6rem;
-        padding-left: 2rem;
-        padding-top: 1rem;
+    .navbar-collapse{
+        background-color: #333;
     }
-    .rounded-pill {
-        margin-top: 1rem;
-        margin-left: 10%;
+    .nav-upper li a {
+        color: #fff;
     }
-    .page-content {
-        padding: 7rem 1.2rem 1rem 1.2rem;
+    .nav-upper ul {
+        display:inline-block
     }
-    .weather {
-        width: 70%;
-        margin-left: 10%;
+    .nav-upper li a:hover {
+        color: rgb(255, 61, 46);
     }
-    .climate {
-        padding-left: 8%;
+    .dropdown-content {
+        min-width: 125px;
     }
-    .weather img {
-        padding-left: 12%;
+    .top-news h6 {
+        width: 24%;
+        margin-left: 4%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 2px;
     }
-    .temperature {
-        padding-left: 20%;
-        font-size: 1rem;
-    }
-    .news img {
-        position: relative;
-        top: -8px;
-        width: 70px;
-        height: 70px;
-    }
-    .news-description {
-        display: none;
-    }
-    .popular-topics {
-        margin-left: 0;
-    }
-    .popular-topics li {
-        margin-left: -60px;
+    #topHeadlines {
+        font-size: 0.8rem;
     }
 }
 
-@media (max-width: 600px) and (min-width: 451px){
-    .search {
-        width: 40%;
-        padding-top: 1rem;
-        padding-right: 5%;
-    }
-    .horizontal-nav span{
-        float: left;
-        font-weight: bold;
-        font-size: 1.5rem;
-        padding-left: 1.5rem;
-        padding-top: 1rem;
-    }
-    .rounded-pill {
-        margin-top: 1rem;
-        margin-left: 1rem;
-    }
-    .page-content {
-        padding: 7rem 1.4rem 1rem 1.4rem;
-    }
-    .weather {
-        width: 70%;
-        margin-left: 10%
-    }
-    .climate {
-        padding-left: 9%;
-    }
-    .weather img {
-        padding-left: 25%;
-    }
-    .temperature {
+@media (max-width: 575px) and (min-width: 451px){
+    .nav-mid .text-muted {
         padding-left: 20%;
     }
-    .news img {
-        position: relative;
-        top: 15px;
+    .navbar-collapse{
+        background-color: #333;
+    }
+    .nav-upper li a {
+        color: #fff;
+    }
+    .nav-upper ul {
+        display:inline-block
+    }
+    .nav-upper li a:hover {
+        color: rgb(255, 61, 46);
+    }
+    .top-news h6 {
+        width: 18%;
+        margin-left: 6%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+    }
+    #topHeadlines {
+        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -17rem;
+@media (max-width: 600px) and (min-width: 576px){
+    .nav-mid .text-muted {
+        padding-left: 20%;
     }
-    #sidebar.active {
-        margin-left: 0;
+    .top-news h6 {
+        width: 13%;
+        margin-left: 6%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
     }
-    #content {
-        width: 100%;
-        margin: 0;
-    }
-    #content.active {
-        margin-left: 17rem;
-        width: calc(100% - 17rem);
-    }
-    .search {
-        padding-right: 8%;
+    #topHeadlines {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 800px) and (min-width: 601px){
-    .search {
-        width: 50%;
-        padding-top: 1rem;
-        padding-right: 5%;
+    .nav-mid .text-muted {
+        padding-left: 19%;
     }
-    .horizontal-nav span{
-        float: left;
-        font-weight: bold;
-        font-size: 1.5rem;
-        padding-left: 2rem;
-        padding-top: 0.7rem;
-    }
-    .weather {
-        width: 50%;
-        margin-left: 23%;
-    }
-    .climate {
-        padding-left: 9%;
-    }
-    .weather img {
-        padding-left: 25%;
-    }
-    .temperature {
-        padding-left: 20%;
-    }
-    .popular-topics {
+    .top-news h6 {
+        width: 13%;
         margin-left: 8%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+    }
+    #topHeadlines {
+        font-size: 1rem;
     }
 }
 
-@media (min-width: 801px) and (max-width: 990px){
-    .search {
-        width: 50%;
-        padding-top: 1rem;
-        padding-right: 5%;
+@media (max-width: 1024px) and (min-width: 801px){
+    .nav-mid .text-muted {
+        padding-left: 18%;
     }
-    .horizontal-nav span{
-        float: left;
-        font-weight: bold;
-        font-size: 2rem;
-        padding-left: 4rem;
-        padding-top: 0.7rem;
-    }
-    .rounded-pill {
-        margin-top: 1rem;
-    }
-    .page-content {
-        margin-left: 40%;
-    }
-    .weather {
-        width: 50%;
-        margin-left: 23%;
-    }
-    .climate {
-        padding-left: 9%;
-    }
-    .weather img {
-        padding-left: 25%;
-    }
-    .temperature {
-        padding-left: 20%;
-    }
-    .popular-topics {
-        margin-left: 15%;
-    }
-}
-
-@media (min-width: 991px) and (max-width: 1199px) {
-    .weather {
-        display: none;
-    }
-    .popular-topics {
-        display: none;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1400px) {
-    .weather {
-        width: 90%;
-    }
-    .page-content {
-        max-width: 42%;
-        padding-right: 0;
-    }
-    .weather {
-        margin-left: 0;
-        padding-left: 0;
-    }
-}
-
-@media (min-width: 1401px){
-    .weather {
-        width: 100%;
-        margin-left: 30%;
-    }
-    .page-content {
-        margin-left: 10rem;
+    .top-news h6 {
+        width: 10%;
+        margin-left: 10%;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
     }
 }

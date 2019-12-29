@@ -15,136 +15,128 @@
 
     <title> Crimp News</title>
     <link rel = "icon"
-    href = "https://www.crimpnews.in/wp-content/uploads/2019/08/cropped-Crimp-News-2-e1566650875324-1-192x192.png"
+    href = "public/images/icon.jpg"
     type = "image/x-icon">
 
 </head>
 
 <body>
 
-    <!-- horizontal nav -->
-    <div class="horizontal-nav">
-        <!-- Toggle button -->
-        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
-            <i class="fa fa-bars mr-2"></i>
-        </button>
+    <!-- horizontal navs -->
 
-        <span class="m-0">
-            <u>Crimp News</u>
-        </span>
+    <!-- upper nav -->
+    <nav class="navbar navbar-expand-sm navbar-dark nav-upper" role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav">
+                <li>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=simranjeet@crimpnews.in" target="_blank" class="nav-link">
+                        <i class="fa fa-comments mr-1 fa-fw"></i>
+                        Send Feedback
+                    </a>
+                </li>
+                <li>
+                    <a href="subscribe.php" class="nav-link">
+                        <i class="fa fa-address-card mr-1 fa-fw"></i>
+                        Subscribe
+                    </a>
+                </li>
+                <li>
+                    <a href="aboutus.php" class="nav-link">
+                        <i class="fa fa-user mr-1 fa-fw"></i>
+                        About Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Search form -->
-        <div class="input-group search">
-            <input class="form-control search-field" type="search" placeholder="&#xF002;" style="font-family:Arial, FontAwesome">
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <i class="fa fa-search" onclick="search()"></i>
-                </div>
-            </div>
+    <!-- middle nav -->
+    <div class="nav-mid">
+        <div class="crimp-news">
+            Crimp
+            <span>
+                News
+            </span>
+        </div>
+        <div class="text-muted">
+                Your Placement Partner
         </div>
     </div>
 
-    <!-- Vertical navbar -->
-    <div class="vertical-nav bg-white" id="sidebar">
-        <ul class="nav flex-column bg-white mb-0">
-            <li class="nav-item">
-                <a href="index.php" class="nav-link text-dark bg-light">
-                    <i class="fa fa-newspaper-o mr-3 text-primary fa-fw"></i>
+    <!-- lower nav -->
+    <div class="nav-lower">
+        <ul class="nav pull-left">
+            <li>
+                <a href="index.php">
+                    <i class="fa fa-newspaper-o mr-2 fa-fw"></i>
                     Top Stories
                 </a>
             </li>
-            <hr>
-            <li class="nav-item">
-                <a href="index.php?q=India" class="nav-link text-dark">
-                    <i class="fa fa-flag mr-3 text-primary fa-fw"></i>
-                    India
+            <li class="dropdown">
+                <a href="#" class="dropbtn">
+                    Categories
+                    <i class="fa fa-caret-down"></i>
                 </a>
+                <div class="dropdown-content">
+                    <a href="index.php?q=India">
+                        <i class="fa fa-flag mr-1 fa-fw"></i>
+                        India
+                    </a>
+                    <hr>
+                    <a href="index.php?q=World">
+                        <i class="fa fa-globe mr-1 fa-fw"></i>
+                        World
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Tech">
+                        <i class="fa fa-desktop mr-1 fa-fw"></i>
+                        Tech
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Business">
+                        <i class="fa fa-pencil mr-1 fa-fw"></i>
+                        Firm
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Budget">
+                        <i class="fa fa-money mr-1 fa-fw"></i>
+                        Budget
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Industry">
+                        <i class="fa fa-industry mr-1 fa-fw"></i>
+                        Industry
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Entertainment">
+                        <i class="fa fa-gamepad mr-1 fa-fw"></i>
+                        Fun
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Science">
+                        <i class="fa fa-flask mr-1 fa-fw"></i>
+                        Science
+                    </a>
+                    <hr>
+                    <a href="index.php?q=Sports">
+                        <i class="fa fa-bicycle  mr-1 fa-fw"></i>
+                        Sports
+                    </a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a href="index.php?q=World" class="nav-link text-dark">
-                    <i class="fa fa-globe mr-3 text-primary fa-fw"></i>
-                    World
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Tech" class="nav-link text-dark">
-                    <i class="fa fa-desktop mr-3 text-primary fa-fw"></i>
-                    Technology
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Budget" class="nav-link text-dark">
-                    <i class="fa fa-money mr-3 text-primary fa-fw"></i>
-                    Budget
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Business" class="nav-link text-dark">
-                    <i class="fa fa-pencil mr-3 text-primary fa-fw"></i>
-                    Business
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Industry" class="nav-link text-dark">
-                    <i class="fa fa-industry mr-3 text-primary fa-fw"></i>
-                    Industry
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Entertainment" class="nav-link text-dark">
-                    <i class="fa fa-gamepad mr-3 text-primary fa-fw"></i>
-                    Entertainment
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Science" class="nav-link text-dark">
-                    <i class="fa fa-flask mr-3 text-primary fa-fw"></i>
-                    Science
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?q=Sports" class="nav-link text-dark">
-                    <i class="fa fa-bicycle mr-3 text-primary fa-fw"></i>
-                    Sports
-                </a>
-            </li>
-            <hr>
-        <!--
-            <li class="nav-item">
-                <a href="index.php?q=Earlier" class="nav-link text-dark">
-                    <i class="fa fa-hourglass-end mr-3 text-primary fa-fw"></i>
-                    Earlier News
-                </a>
-            </li>
-        -->
-            <li class="nav-item">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=simranjeet@crimpnews.in" target="_blank" class="nav-link text-dark">
-                    <i class="fa fa-comments mr-3 text-primary fa-fw"></i>
-                    Send Feedback
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="subscribe.php" class="nav-link text-dark">
-                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                    Subscribe
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="aboutus.php" class="nav-link text-dark">
-                    <i class="fa fa-user mr-3 text-primary fa-fw"></i>
-                    About Us
-                </a>
-            </li>
-            <li class="nav-item copyright">
-                <span id="year"></span>
-                <a href="/">
-                    <i>Crimp News </i>
-                </a>
-            </li>
-            <div style="height: 90px;">
-                <!--extra div for scrolling through upto copyright on smaller device-->
-            </div>
         </ul>
     </div>
 
-    <!-- End vertical navbar -->
+    <?php require_once('stories/topstories.php'); ?>
+
+    <div class='top-news'>
+        <h6> Top News </h6>
+        <?php get_topheadlines() ?>
+        <a href='#' id="topHeadlines" target="_blank"> </a>
+    </div>
