@@ -51,7 +51,7 @@
                         </h6>
                         <hr>
                         <div class="imgBox">
-                            <img src="https://source.unsplash.com/random/?World"
+                            <img src="https://source.unsplash.com/random/?tower"
                             onclick="window.location.href='index.php?q=World'"
                             alt="World-img">
                         </div>
