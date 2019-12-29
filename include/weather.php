@@ -11,7 +11,7 @@ function get_weather(){
     if(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     else
-        $ip = '116.73.235.148';//$_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER['REMOTE_ADDR'];
 
     // get lat and long of the user
     $latlong = explode(",", file_get_contents('https://ipapi.co/'.$ip.'/latlong'));
