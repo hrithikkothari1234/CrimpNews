@@ -2,6 +2,15 @@
 
 function get_topstories(){
 
+    echo
+    '
+    <h6 class="news-container-title-box">
+        Top News
+    </h6>
+    <hr class="news-container-title-box-hr">
+    <div class="container">
+    ';
+
     // Livemint RSS
 
     $rss = simplexml_load_file('https://www.livemint.com/rss/news');
@@ -44,8 +53,8 @@ function get_topstories(){
         $link = $feed[$x]['link'];
         $image = $feed[$x]['image'];
         $description = $feed[$x]['desc'];
-        if(strlen($description)>150){
-            $description=substr($description,0,150).'...';
+        if(strlen($description)>200){
+            $description=substr($description,0,200).'...';
         }
         $provider = $feed[$x]['provider'];
 
@@ -57,7 +66,43 @@ function get_topstories(){
         $month = $result[1];
         $year = $result[2];
 
-    }
+        echo
+        "
+            <div class='row'>
+                <div class='col-xl-12 news-content-card'>
+                    <p class='news-title'>
+                        <a href='{$link}' target='_blank'>
+                            {$title}
+                        </a>
+                    </p>
+                    <span class='news-provider'>
+                        <a href='{$link}' target='_blank'>
+                        {$provider}
+                        </a>
+                    </span>
+                    <span class='news-date text-muted'>
+                        <i class='fa fa-clock-o'></i> {$month} {$day},$year
+                    </span>
+                    <div class='imgBox-news pull-right'>
+                        <img src='{$image}' alt='' class='pull-right'>
+                    </div>
+                    <p class='news-description'>
+                        {$description}
+                    </p>
+                    <p>
+                        <a href='{$link}' style='font-size: 0.8rem;' target='_blank' class='news-coverage'>
+                            <i class='fa fa-folder-open'></i>
+                            View full coverage
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        ";
+
+    } // loop ends
+
+    echo "</div>"; // container ends
 }
 
 function get_topheadlines(){

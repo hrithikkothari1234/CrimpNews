@@ -22,7 +22,6 @@
 
             <?php
                 if(!isset($_GET['q'])){      // top stories
-                    get_topstories();
             ?>
                     <!-- container for all news category cards -->
                     <div class="container" style="margin-top: 1rem;">
@@ -65,7 +64,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- container ends -->
             <?php
+                    get_topstories();  // display top stories
                 }
                 else if($_GET['q'] == 'India')      // india
                     get_indiastories();
@@ -88,6 +89,10 @@
             ?>
 
         </div>
+
+    </div>
+
+</div>
 
 
 <?php require_once("include/footer.php"); ?>
