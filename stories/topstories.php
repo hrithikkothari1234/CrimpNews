@@ -90,7 +90,7 @@ function get_topstories(){
                         {$description}
                     </p>
                     <p>
-                        <a href='{$link}' style='font-size: 0.8rem;' target='_blank' class='news-coverage'>
+                        <a href='{$link}' target='_blank' class='news-coverage'>
                             <i class='fa fa-folder-open'></i>
                             View full coverage
                         </a>

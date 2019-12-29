@@ -2,98 +2,14 @@
 
 function get_indiastories(){
 
-    echo '<h5 style="padding-bottom: 2%;"> India </h5>';
-
-    // NDTV.com RSS
-    $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvnews-india-news');
-
-    $provider = "NDTV.com";
-    date_default_timezone_set('Asia/Kolkata');
-
-    $feed = array();
-    foreach ($rss->channel->item as $node) {
-    	$item = array (
-    		'title' => $node->title,
-    		'desc' => $node->description,
-    		'link' => $node->link,
-    		'date' => $node->pubDate
-    		);
-    	array_push($feed, $item);
-    }
-
-    for($x=0; $x<count($feed); $x++) {
-    	$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
-    	$link = $feed[$x]['link'];
-        $description = $feed[$x]['desc'];
-        if(strlen($description)>150){
-            $description=substr($description,0,150).'...';
-        }
-    	$date = date('i_H_d_m', strtotime($feed[$x]['date']));
-
-        // Format : Minute_Hour_Day_Month
-        $current_time =  date('i_H_d_m',strtotime(date('r',time())));
-
-        $date_array = explode('_',$date);
-        $current_time_array = explode('_',$current_time);
-
-        if( $date_array[3] == $current_time_array[3] ) // same month
-        {
-            if($date_array[2] == $current_time_array[2]) // same day
-            {
-                if($date_array[1] == $current_time_array[1]) // Same hour
-                {
-                    $timespan = $current_time_array[0] - $date[0]; // calculate minute difference
-                    $timespan = $timespan .' minutes ago';
-                }
-                else
-                {
-                    $timespan = $current_time_array[1] - $date_array[1]; // hour difference
-                    $timespan = $timespan .' hours ago';
-                }
-            }
-            else
-            {
-                $timespan = $current_time_array[2] - $date_array[2]; // days difference
-                if ($timespan == 1)
-                    $timespan = $timespan . ' day ago';
-                else
-                    $timespan = $timespan . ' days ago';
-            }
-        }
-        else {
-            $timespan = $current_time_array[3] - $date_array[3]; // months difference
-            if($timespan < 0)
-                $timespan = $timespan + 12;
-            $timespan = $timespan . ' Months Ago';
-        }
-
-        echo "
-            <div class='news'>
-                <p class='news-title'>
-                    <a href='{$link}' target='_blank'>
-                    {$title}
-                    </a>
-                </p>
-                <span class='news-provider'>
-                    <a href='{$link}' target='_blank'>
-                        {$provider}
-                    </a>
-                </span>
-                <span class='news-date text-muted'>
-                    . {$timespan}
-                </span>
-                <p class='news-description'>
-                    {$description}
-                </p>
-                <p>
-                    <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
-                        <i class='fa fa-folder-open'></i>
-                        View full coverage
-                    </a>
-                </p>
-            </div>
-        ";
-    }
+    echo
+    '
+    <h6 class="news-container-title-box">
+        India
+    </h6>
+    <hr class="news-container-title-box-hr">
+    <div class="container">
+    ';
 
     // Toi RSS
     $rss=simplexml_load_file('https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms');
@@ -114,8 +30,14 @@ function get_indiastories(){
     for($x=0; $x<count($feed); $x++) {
         $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
         $link = $feed[$x]['link'];
-        $date = date('i_H_d_m', strtotime($feed[$x]['date']));
         $description = (string)$feed[$x]['desc'];
+        // format : DAY_MONTH_YEAR
+        $date = date('d_F_Y', strtotime($feed[$x]['date']));
+        $result = explode('_',$date);
+
+        $day = $result[0];
+        $month = $result[1];
+        $year = $result[2];
 
         $result = explode('style="margin-top:3px;margin-right:5px;" src="', $description);
         if( count($result) > 1){
@@ -126,68 +48,118 @@ function get_indiastories(){
         else
             $img_link = "";
 
-        // Format : Minute_Hour_Day_Month
-        $current_time =  date('i_H_d_m',strtotime(date('r',time())));
+        $descr = explode('</a>', $description);
+        if( count($descr)>1 )
+            $actual_descr = $descr[1];
+        else
+            $actual_descr = " ";
 
-        $date_array = explode('_',$date);
-        $current_time_array = explode('_',$current_time);
-
-        if( $date_array[3] == $current_time_array[3] ) // same month
-        {
-            if($date_array[2] == $current_time_array[2]) // same day
-            {
-                if($date_array[1] == $current_time_array[1]) // Same hour
-                {
-                    $timespan = $current_time_array[0] - $date[0]; // calculate minute difference
-                    $timespan = $timespan .' minutes ago';
-                }
-                else
-                {
-                    $timespan = $current_time_array[1] - $date_array[1]; // hour difference
-                    $timespan = $timespan .' hours ago';
-                }
-            }
-            else
-            {
-                $timespan = $current_time_array[2] - $date_array[2]; // days difference
-                if ($timespan == 1)
-                    $timespan = $timespan . ' day ago';
-                else
-                    $timespan = $timespan . ' days ago';
-            }
-        }
-        else {
-            $timespan = $current_time_array[3] - $date_array[3]; // months difference
-            if($timespan < 0)
-                $timespan = $timespan + 12;
-            $timespan = $timespan . ' Months Ago';
+        if(strlen($actual_descr)>150){
+            $actual_descr=substr($actual_descr,0,150).'...';
         }
 
-        echo "
-            <div class='news'>
-                <p class='news-title'>
-                    <a href='{$link}' target='_blank'>
-                    {$title}
-                    </a>
-                </p>
-                <span class='news-provider'>
-                    <a href='{$link}' target='_blank'>
+        echo
+        "
+            <div class='row'>
+                <div class='col-xl-12 news-content-card'>
+                    <p class='news-title'>
+                        <a href='{$link}' target='_blank'>
+                            {$title}
+                        </a>
+                    </p>
+                    <span class='news-provider'>
+                        <a href='{$link}' target='_blank'>
                         {$provider}
-                    </a>
-                </span>
-                <span class='news-date text-muted'>
-                    . {$timespan}
-                </span>
-                <img src='{$img_link}' alt='' width = '90' height='80' class='pull-right' style='position: relative; top: -10px;'>
-                <p>
-                    <a href='{$link}' style='font-size: 0.8rem;' target='_blank'>
-                        <i class='fa fa-folder-open'></i>
-                        View full coverage
-                    </a>
-                </p>
+                        </a>
+                    </span>
+                    <span class='news-date text-muted'>
+                        <i class='fa fa-clock-o'></i> {$month} {$day},$year
+                    </span>
+                    <div class='imgBox-news pull-right'>
+                        <img src='{$img_link}' alt='' class='pull-right'>
+                    </div>
+                    <p class='news-description'>
+                        {$actual_descr}
+                    </p>
+                    <p>
+                        <a href='{$link}' target='_blank' class='news-coverage'>
+                            <i class='fa fa-folder-open'></i>
+                            View full coverage
+                        </a>
+                    </p>
+                </div>
             </div>
+            <hr>
         ";
+    } // loop ends
+
+    // NDTV.com RSS
+    $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvnews-india-news');
+
+    $provider = "NDTV.com";
+    date_default_timezone_set('Asia/Kolkata');
+
+    $feed = array();
+    foreach ($rss->channel->item as $node) {
+    	$item = array (
+    		'title' => $node->title,
+    		'desc' => $node->description,
+    		'link' => $node->link,
+    		'date' => $node->pubDate
+    		);
+    	array_push($feed, $item);
     }
+
+    for($x=0; $x<count($feed); $x++) {
+        $title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+        $link = $feed[$x]['link'];
+        $description = $feed[$x]['desc'];
+        if(strlen($description)>150){
+            $description=substr($description,0,150).'...';
+        }
+        // format : DAY_MONTH_YEAR
+        $date = date('d_F_Y', strtotime($feed[$x]['date']));
+        $result = explode('_',$date);
+
+        $day = $result[0];
+        $month = $result[1];
+        $year = $result[2];
+
+        echo
+        "
+            <div class='row'>
+                <div class='col-xl-12 news-content-card'>
+                    <p class='news-title'>
+                        <a href='{$link}' target='_blank'>
+                            {$title}
+                        </a>
+                    </p>
+                    <span class='news-provider'>
+                        <a href='{$link}' target='_blank'>
+                        {$provider}
+                        </a>
+                    </span>
+                    <span class='news-date text-muted'>
+                        <i class='fa fa-clock-o'></i> {$month} {$day},$year
+                    </span>
+                    <p class='news-description'>
+                        {$description}
+                    </p>
+                    <p>
+                        <a href='{$link}' target='_blank' class='news-coverage'>
+                            <i class='fa fa-folder-open'></i>
+                            View full coverage
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        ";
+
+    }   // loop ends
+
+    echo "</div>"; // container ends
+
 }
 
 
