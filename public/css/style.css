@@ -321,6 +321,65 @@ body {
     font-family: Poppins;
 }
 
+/******************/
+/* Footer Content */
+
+footer {
+    background-color: #272f32;
+
+}
+
+footer img {
+    margin-top: 1rem;
+    width: 130px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+footer img:hover {
+    cursor: pointer;
+}
+
+footer h7 {
+    font-size: 0.9rem;
+    margin-top: 2.2rem;
+    text-align: left;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+}
+
+.lower-footer {
+    background-color: rgb(255, 61, 46);
+    height: 30px;
+}
+
+.lower-footer span {
+    color: #fff;
+}
+
+.lower-footer h7 {
+    color: #fff;
+}
+
+.lower-footer h7:hover {
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+.scroll-top-btn {
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+
+.scroll-top-btn:hover {
+    cursor: pointer;
+    background-color: #555;
+}
+
 /***********************************/
 /* Media Queries For Responsiveness*/
 
