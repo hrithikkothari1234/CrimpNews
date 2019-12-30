@@ -299,8 +299,8 @@ body {
     color: #333;
 }
 
-/******************/
-/* Subscribe page */
+/************************************/
+/* Subscribe page and About us page */
 
 .subscribe-page-content {
     margin-left: 15%;
@@ -309,6 +309,16 @@ body {
 
 .subscribe-page-content h7 {
     color: rgb(255, 61, 46);
+}
+
+.subscribe-page-content img {
+    margin-left: 40%;
+    width: 110px;
+    height: 120px;
+}
+
+.subscribe-page-content h5 {
+    font-family: Poppins;
 }
 
 /***********************************/
@@ -360,6 +370,12 @@ body {
     }
     .subscribe-page-content {
         margin-left: 0;
+    }
+    .subscribe-page-content img {
+        margin-left: 25%;
+    }
+    .subscribe-page-content h5 {
+        font-size: 1rem;
     }
 }
 
