@@ -27,7 +27,7 @@
                         </h6>
                         <hr>
                         <div class="imgBox">
-                            <img src="https://source.unsplash.com/random/?tech"
+                            <img src="https://source.unsplash.com/random/?laptop"
                             onclick="window.location.href='index.php?q=Tech'"
                             alt="Tech-img">
                         </div>
@@ -39,7 +39,7 @@
                         </h6>
                         <hr>
                         <div class="imgBox">
-                            <img src="https://source.unsplash.com/random/?business"
+                            <img src="https://source.unsplash.com/random/?office"
                             onclick="window.location.href='index.php?q=Business'"
                             alt="Firm-img">
                         </div>
@@ -51,7 +51,7 @@
                         </h6>
                         <hr>
                         <div class="imgBox">
-                            <img src="https://source.unsplash.com/random/?tower"
+                            <img src="https://source.unsplash.com/random/?modern"
                             onclick="window.location.href='index.php?q=World'"
                             alt="World-img">
                         </div>
