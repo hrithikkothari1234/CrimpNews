@@ -326,11 +326,22 @@ body {
 
 footer {
     background-color: #272f32;
-
+    overflow: hidden;
 }
 
-footer img {
+footer .pull-left {
     margin-top: 1rem;
+    margin-left: 45%;
+}
+
+footer span {
+    margin-left: 20%;
+    display: inline-block;
+    margin-right: 20%;
+}
+
+
+footer img {
     width: 130px;
     height: 120px;
     margin-bottom: 1rem;
@@ -342,7 +353,6 @@ footer img:hover {
 
 footer h7 {
     font-size: 0.9rem;
-    margin-top: 2.2rem;
     text-align: left;
     font-weight: 400;
     color: rgba(255,255,255,0.7);
@@ -351,6 +361,14 @@ footer h7 {
 .lower-footer {
     background-color: rgb(255, 61, 46);
     height: 30px;
+}
+
+.lower-footer .pull-left {
+    margin-left: 10%;
+}
+
+.lower-footer .pull-right {
+    margin-right: 10%;
 }
 
 .lower-footer span {
@@ -436,6 +454,9 @@ footer h7 {
     .subscribe-page-content h5 {
         font-size: 1rem;
     }
+    footer .pull-left {
+        margin-left: 32%;
+    }
 }
 
 @media (max-width: 575px) and (min-width: 451px){
@@ -481,6 +502,9 @@ footer h7 {
     .subscribe-page-content {
         margin-left: 0;
     }
+    footer .pull-left {
+        margin-left: 36%;
+    }
 }
 
 @media (max-width: 600px) and (min-width: 576px){
@@ -513,6 +537,9 @@ footer h7 {
     }
     .subscribe-page-content {
         margin-left: 0;
+    }
+    footer .pull-left {
+        margin-left: 40%;
     }
 }
 
@@ -547,6 +574,9 @@ footer h7 {
     .subscribe-page-content {
         margin-left: 0;
     }
+    footer .pull-left {
+        margin-left: 40%;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 801px){
@@ -576,6 +606,9 @@ footer h7 {
     }
     .subscribe-page-content {
         margin-left: 0;
+    }
+    footer .pull-left {
+        margin-left: 40%;
     }
 }
 
