@@ -39,11 +39,6 @@
 
     <script type="text/javascript" src="public/js/index.js"></script>
 
-    <script>
-        // Get the current year for the copyright
-        $('#year').text(new Date().getFullYear());
-    </script>
-
 </body>
 
 </html>
