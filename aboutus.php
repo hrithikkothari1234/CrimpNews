@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h3 class="text-center" style="font-family: Playfair Display, serif;">
                             About
-                                <span style="color: rgb(255, 61, 46);">
+                                <span style="color: #617be3;">
                                     Us
                                 <span>
                             <i class="fa fa-handshake-o fa-fw"></i>
