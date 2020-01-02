@@ -59,13 +59,7 @@
     <!-- middle nav -->
     <div class="nav-mid">
         <div class="crimp-news">
-            Crimp
-            <span>
-                News
-            </span>
-        </div>
-        <div class="text-muted">
-                Your Placement Partner
+            <img src="public/images/icon.jpg" onclick="window.location.href='/'">
         </div>
     </div>
 
