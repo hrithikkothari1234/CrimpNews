@@ -91,7 +91,7 @@ function get_worldstories(){
                     </p>
                 </div>
             </div>
-            <hr>
+            <hr style='height:0px; border:none; border-top: 1px solid #12cad6;'>
         ";
 
     } // loop ends
@@ -157,7 +157,7 @@ function get_worldstories(){
                     </p>
                 </div>
             </div>
-            <hr>
+            <hr style='height:0px; border:none; border-top: 1px solid #12cad6;'>
         ";
 
     }   // loop ends

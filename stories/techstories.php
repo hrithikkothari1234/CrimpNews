@@ -53,9 +53,6 @@ function get_techstories(){
         $link = $feed[$x]['link'];
         $image = $feed[$x]['image'];
         $description = $feed[$x]['desc'];
-        if(strlen($description)>200){
-            $description=substr($description,0,200).'...';
-        }
         $provider = $feed[$x]['provider'];
 
         // format : DAY_MONTH_YEAR
@@ -65,6 +62,17 @@ function get_techstories(){
         $day = $result[0];
         $month = $result[1];
         $year = $result[2];
+
+        $desc = explode('</a>',$description);
+        if( count($desc)>1 )
+            $actual_desc = $desc[1];
+        else
+            $actual_desc = $desc[0];
+
+
+        if(strlen($actual_desc)>200){
+            $actual_desc=substr($actual_desc,0,200).'...';
+        }
 
         echo
         "
@@ -87,7 +95,7 @@ function get_techstories(){
                         <img src='{$image}' alt='' class='pull-right'>
                     </div>
                     <p class='news-description'>
-                        {$description}
+                        {$actual_desc}
                     </p>
                     <p>
                         <a href='{$link}' target='_blank' class='news-coverage'>
@@ -97,7 +105,7 @@ function get_techstories(){
                     </p>
                 </div>
             </div>
-            <hr>
+            <hr style='height:0px; border:none; border-top: 1px solid #12cad6;'>
         ";
 
     } // loop ends
