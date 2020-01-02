@@ -221,7 +221,7 @@ body {
 }
 
 .news-coverage {
-    color: #617be3;
+    color: #007bff;
 }
 
 .news-coverage:hover {
@@ -238,7 +238,7 @@ body {
 }
 
 .subscribe-page-content h7 {
-    color: rgb(255, 61, 46);
+    color: #015668;
 }
 
 .subscribe-page-content img {
@@ -289,7 +289,7 @@ footer h7 {
 }
 
 .lower-footer {
-    background-color: rgb(255, 61, 46);
+    background-color: #3282b8;
     height: 30px;
 }
 
@@ -310,7 +310,7 @@ footer h7 {
 }
 
 .lower-footer h7:hover {
-    color: rgba(255,255,255,0.7);
+    color: #0f4c75;
     cursor: pointer;
 }
 
@@ -345,7 +345,7 @@ footer h7 {
         display:inline-block
     }
     .nav-upper li a:hover {
-        color: rgb(255, 61, 46);
+        color: #12cad6;
     }
     .dropdown-content {
         min-width: 125px;
@@ -387,6 +387,10 @@ footer h7 {
     footer .pull-left {
         margin-left: 32%;
     }
+    .news-container-title-box-hr {
+        position: relative;
+        top: -18px;
+    }
 }
 
 @media (max-width: 575px) and (min-width: 451px){
@@ -403,7 +407,7 @@ footer h7 {
         display:inline-block
     }
     .nav-upper li a:hover {
-        color: rgb(255, 61, 46);
+        color: #12cad6;
     }
     .top-news h6 {
         width: 18%;
@@ -434,6 +438,10 @@ footer h7 {
     }
     footer .pull-left {
         margin-left: 36%;
+    }
+    .news-container-title-box-hr {
+        position: relative;
+        top: -18px;
     }
 }
 
