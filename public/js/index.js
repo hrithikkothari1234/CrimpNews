@@ -17,8 +17,8 @@
         result_array_year = result_array[2].split(' ')[1].split('_')[2];
 
         topHeadlines.innerHTML =
-        result_array_title + "<span style='color: #A0A0A0;'> - Livemint" + " " + result_array_month +" "+
-            result_array_date + " , " + result_array_year + "</span";
+        result_array_title + "<br> <div style='color: #A0A0A0;'> - Livemint" + " " + result_array_month +" "+
+            result_array_date + " , " + result_array_year + "</div";
 
         topHeadlines.setAttribute("href", result_array_link);
         if(x === result_len-1)

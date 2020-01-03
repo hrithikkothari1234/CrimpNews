@@ -112,25 +112,37 @@ body {
 /************/
 /* Top News */
 
+.top-news {
+    margin-top: 1rem;
+}
+
 .top-news h6 {
     height: 23px;
     text-align: center;
     background-color: #222;
     color: #fff;
-    width: 8%;
-    margin-left: 15%;
-    margin-top: 1rem;
+    width: 40%;
+    margin-left: 30%;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;
+    margin-bottom: 3rem;
 }
 
 #topHeadlines {
     color: #32407b;
     text-decoration: none;
-    position: absolute;
-    margin-left: 30%;
-    margin-top: -30px;
+    position: relative;
+    animation: MoveUpDown 4s linear infinite;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 40px;
+    }
 }
 
 #topHeadlines:hover {
@@ -203,7 +215,7 @@ body {
 
 .imgBox-news {
     position: relative;
-    top: -20px;
+    top: -10px;
     right: -12px;
     overflow: hidden;
 }
@@ -221,12 +233,77 @@ body {
 }
 
 .news-coverage {
+    font-size: 0.8rem;
     color: #007bff;
 }
 
 .news-coverage:hover {
     color: #12cad6;
     text-decoration: none;
+}
+
+/******************/
+/* Weather Content*/
+
+.weather-widget {
+    height: 15rem;
+    border-style: solid;
+    border-color: rgb(218, 220, 224);
+    border-width: 1px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+}
+
+.weather-container-title-box {
+    margin-top: 4rem;
+    font-family: Poppins;
+    padding: 3px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #3282b8;
+    width: 100px;
+    text-align: center;
+}
+
+.weather-widget a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: Poppins;
+    color: #3282b8;
+}
+
+.weather-widget a:hover {
+    text-decoration: none;
+    color: #12cad6;
+}
+
+.weather-widget hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: grey;
+    border-width: 3px;
+    width: 26%;
+    position: relative;
+    top: -10px;
+    margin-bottom: 0;
+}
+
+.weather-widget img {
+    margin-top: 0;
+    width: 110px;
+    height: 110px;
+    margin-left: 30%;
+}
+
+.weather-widget img:hover {
+    cursor: pointer;
+    animation: skew 3s infinite;
+    transform: skew(20deg);
+}
+
+.weather-widget .text-muted {
+    text-align: center;
 }
 
 /************************************/
@@ -367,6 +444,10 @@ footer h7 {
     .news-description {
         display: none;
     }
+    .news-coverage {
+        position: relative;
+        top: 20px;
+    }
     .imgBox-news {
         position: relative;
         top: -10px;
@@ -390,6 +471,9 @@ footer h7 {
     .news-container-title-box-hr {
         position: relative;
         top: -18px;
+    }
+    .side-col-content {
+        display: none;
     }
 }
 
@@ -443,6 +527,9 @@ footer h7 {
         position: relative;
         top: -18px;
     }
+    .side-col-content {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) and (min-width: 576px){
@@ -478,6 +565,9 @@ footer h7 {
     }
     footer .pull-left {
         margin-left: 40%;
+    }
+    .side-col-content {
+        display: none;
     }
 }
 
@@ -515,6 +605,9 @@ footer h7 {
     footer .pull-left {
         margin-left: 40%;
     }
+    .side-col-content {
+        display: none;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 801px){
@@ -548,6 +641,9 @@ footer h7 {
     footer .pull-left {
         margin-left: 40%;
     }
+    .side-col-content {
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) and (min-width: 1001px){
@@ -555,9 +651,12 @@ footer h7 {
         width: 436px;
     }
     .top-news h6 {
-        width: 10%;
+        width: 40%;
     }
     .news-category-card a {
+        margin-left: 25%;
+    }
+    .weather-widget img {
         margin-left: 25%;
     }
 }

@@ -126,11 +126,3 @@
             </li>
         </ul>
     </div>
-
-    <?php require_once('stories/topstories.php'); ?>
-
-    <div class='top-news'>
-        <h6> Top News </h6>
-        <?php get_topheadlines() ?>
-        <a href='#' id="topHeadlines" target="_blank"> </a>
-    </div>
