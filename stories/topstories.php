@@ -5,7 +5,7 @@ function get_topstories(){
     echo
     '
     <h6 class="news-container-title-box">
-        Top News
+        Headlines
     </h6>
     <hr class="news-container-title-box-hr">
     <div class="container">
