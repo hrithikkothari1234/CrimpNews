@@ -15,7 +15,6 @@ function get_techstories(){
     $rss=simplexml_load_file('https://www.livemint.com/rss/technology');
 
     $provider = "Livemint";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {

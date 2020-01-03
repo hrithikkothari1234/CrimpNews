@@ -101,7 +101,6 @@ function get_entertainmentstories(){
     $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvmovies-latest');
 
     $provider = "NDTV.com";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {

@@ -97,7 +97,6 @@ function get_businessstories(){
     $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvprofit-latest');
 
     $provider = "NDTV.com";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {

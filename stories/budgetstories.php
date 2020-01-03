@@ -15,7 +15,6 @@ function get_budgetstories(){
     $rss=simplexml_load_file('https://www.livemint.com/rss/budget');
 
     $provider = "Livemint";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {

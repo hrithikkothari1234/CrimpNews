@@ -97,7 +97,6 @@ function get_indiastories(){
     $rss=simplexml_load_file('http://feeds.feedburner.com/ndtvnews-india-news');
 
     $provider = "NDTV.com";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {

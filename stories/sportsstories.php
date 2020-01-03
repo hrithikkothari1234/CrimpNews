@@ -16,7 +16,6 @@ function get_sportsstories(){
     $rss = simplexml_load_file('https://www.livemint.com/rss/sports');
 
     $provider = "Livemint";
-    date_default_timezone_set('Asia/Kolkata');
 
     $feed = array();
     foreach ($rss->channel->item as $node) {
