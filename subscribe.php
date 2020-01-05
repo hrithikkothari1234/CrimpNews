@@ -76,8 +76,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <h6>Sex</h6>
-                                    <input type="radio" name="sex" value="male"> Male &nbsp;&nbsp;
-                                    <input type="radio" name="sex" value="female"> Female &nbsp;&nbsp;
+                                    <input type="radio" name="sex" value="male"> Male &nbsp;
+                                    <input type="radio" name="sex" value="female"> Female &nbsp;
                                     <input type="radio" name="sex" value="other"> Other
                                 </div>
                             </div>
