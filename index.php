@@ -69,5 +69,6 @@
 
 </div>
 
+<script type="text/javascript" src="public/js/index.js"></script>
 
 <?php require_once("include/footer.php"); ?>

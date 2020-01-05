@@ -7,19 +7,26 @@
 
         $name = $_POST["name"];
         $email = $_POST["email"];
+        $age = $_POST["age"];
+        $sex = $_POST["sex"];
+        $occupation = $_POST["occupation"];
         if(!$name || !$email)
             $_SESSION["ErrorMessage"]="Name or Email missing.";
         $connection;
         $connectingdb;
         if( $connectingdb ){
+            $age = !empty($age) ? "'$age'" : "NULL";
+            $sex = !empty($sex) ? "'$sex'" : "NULL";
+            $occupation = !empty($occupation) ? "'$occupation'" : "NULL";
+
             $query = "SELECT * FROM subscribed_users where email = '{$email}'";
             $Execute=mysqli_query($connection, $query);
             if($Execute->num_rows){
                 $_SESSION["ErrorMessage"]="Email already subscribed.";
             }
             else{
-                $query = "INSERT INTO subscribed_users VALUES('$name','$email')";
-                $Execute=mysqli_query($connection,$query);
+                $query = "INSERT INTO subscribed_users VALUES('$name','$email',$age,$sex,$occupation)";
+                $Execute=mysqli_query($connection, $query);
                 if($Execute)
                     $_SESSION["SuccessMessage"]="Subscribed Succesfully.";
                 else
@@ -50,12 +57,34 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <h6>Name * </h6>
                                     <input type="text" class="form-control" placeholder="Name" name="name" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <h6>Email * </h6>
                                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h6>Age</h6>
+                                    <input type="number" class="form-control" placeholder="Age" name="age">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h6>Sex</h6>
+                                    <input type="radio" name="sex" value="male"> Male &nbsp;&nbsp;
+                                    <input type="radio" name="sex" value="female"> Female &nbsp;&nbsp;
+                                    <input type="radio" name="sex" value="other"> Other
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <h6>Occupation </h6>
+                                   <input type="text" class="form-control" placeholder="Occupation" name="occupation">
                                 </div>
                             </div>
                             <div class="col-md-12">
