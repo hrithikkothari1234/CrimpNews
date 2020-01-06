@@ -5,8 +5,6 @@ function get_weather(){
 
     error_reporting(0);
 
-    global $weather_api_key;
-
     // get user ip address
     if(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -18,7 +16,7 @@ function get_weather(){
     $city = file_get_contents('https://ipapi.co/'.$ip.'/city');
     // get user weather conditions
     $weather = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat='
-    . $latlong[0] . '&lon=' . $latlong[1] . '&appid='. $weather_api_key);
+    . $latlong[0] . '&lon=' . $latlong[1] . '&appid='. weather_api_key);
 
     $json = json_decode($weather);
 
