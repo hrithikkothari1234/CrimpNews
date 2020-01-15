@@ -5,6 +5,8 @@
     if(isset($_POST["subscribe"])){
         require_once('include/db.php');
 
+        error_reporting(0);
+
         $name = $_POST["name"];
         $email = $_POST["email"];
         $age = $_POST["age"];
@@ -12,32 +14,38 @@
         $occupation = $_POST["occupation"];
         if(!$name || !$email)
             $_SESSION["ErrorMessage"]="Name or Email missing.";
-        $connection;
-        $connectingdb;
-        if( $connectingdb ){
-            $age = !empty($age) ? "'$age'" : "NULL";
-            $sex = !empty($sex) ? "'$sex'" : "NULL";
-            $occupation = !empty($occupation) ? "'$occupation'" : "NULL";
+        $con;
+        if( $con ){
+            $age = !empty($age) ? $age : NULL;
+            $sex = !empty($sex) ? $sex : NULL;
+            $occupation = !empty($occupation) ? $occupation : NULL;
 
-            $query = "SELECT * FROM subscribed_users where email = '{$email}'";
-            $Execute=mysqli_query($connection, $query);
-            if($Execute->num_rows){
+            $stmt = $con->prepare("SELECT * FROM subscribed_users where email = ?");
+            $stmt->bind_param('s', $email);
+            $stmt->execute();
+            $stmt->store_result();
+            $numRows = $stmt->num_rows;
+            if($numRows > 0){
                 $_SESSION["ErrorMessage"]="Email already subscribed.";
             }
             else{
-                $query = "INSERT INTO subscribed_users VALUES('$name','$email',$age,$sex,$occupation)";
-                $Execute=mysqli_query($connection, $query);
-                if($Execute)
-                    $_SESSION["SuccessMessage"]="Subscribed Succesfully.";
-                else
+                $stmt = $con->prepare("INSERT INTO subscribed_users(name, email, age, sex, occupation)
+                VALUES(?,?,?,?,?)");
+                $stmt->bind_param('sssss', $name, $email, $age, $sex, $occupation);
+                $stmt->execute();
+                if($stmt->affected_rows === -1)
                     $_SESSION["ErrorMessage"]="Something Went wrong,try again..";
+                else{
+                    $stmt->close();
+                    $_SESSION["SuccessMessage"]="Subscribed Succesfully.";
+                }
             }
+            $con->close();
         }
         else{
             $_SESSION["ErrorMessage"]="Server Error , try again later!";
         }
 
-        mysqli_close($connection);
     }
 ?>
 
