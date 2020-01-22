@@ -18,7 +18,7 @@
     <div class="offset-sm-2 col-sm-8">
         <div class="row mb-4">
             <div class="form-group col-sm-10">
-                <input type="text" placeholder="Search for news category" class="search-input form-control form-control-underlined">
+                <input type="text" placeholder="Search topics or categories" class="search-input form-control form-control-underlined">
             </div>
             <div class="form-group col-sm-2">
                 <button class="btn btn-primary rounded-pill btn-block shadow-sm" onclick="search()">
