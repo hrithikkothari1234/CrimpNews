@@ -125,7 +125,14 @@
                 </div>
             </li>
         </ul>
-        <div class="search-toggle-button pull-right">
+        <div class="search-toggle-button pull-right" onclick="togglesearch()">
             <i class="fa fa-search"></i>
         </div>
     </div>
+
+    <script>
+        // toggle search field
+        function togglesearch(){
+            document.getElementById("search-box").classList.toggle("show-search");
+        }
+    </script>

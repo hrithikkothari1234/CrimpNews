@@ -84,6 +84,14 @@ body {
     cursor: pointer;
 }
 
+.search-field {
+    display: none;
+    margin-top: 4%;
+}
+
+.show-search {
+    display: block;
+}
 
 /***********************/
 /* dropdown categories */
@@ -486,6 +494,9 @@ footer h7 {
         top: -18px;
     }
     .side-col-content {
+        display: none;
+    }
+    .search-toggle-button {
         display: none;
     }
 }
