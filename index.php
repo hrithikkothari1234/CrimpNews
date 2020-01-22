@@ -11,16 +11,17 @@
 <?php require_once('stories/entertainmentstories.php'); ?>
 <?php require_once('stories/sciencestories.php'); ?>
 <?php require_once('stories/sportsstories.php'); ?>
+<?php require_once('stories/searchstories.php'); ?>
 
 <!-- search field visible when icon clicked -->
 <div class="row search-field" id="search-box">
     <div class="offset-sm-2 col-sm-8">
         <div class="row mb-4">
             <div class="form-group col-sm-10">
-                <input type="text" placeholder="Search for news category" class="form-control form-control-underlined">
+                <input type="text" placeholder="Search for news category" class="search-input form-control form-control-underlined">
             </div>
             <div class="form-group col-sm-2">
-                <button class="btn btn-primary rounded-pill btn-block shadow-sm">
+                <button class="btn btn-primary rounded-pill btn-block shadow-sm" onclick="search()">
                 <i class="fa fa-search"></i> &nbsp; Search 
                 </button>
             </div>
@@ -56,6 +57,8 @@
                     get_sciencestories();
                 else if($_GET['q'] == 'Sports')
                     get_sportsstories();
+                else
+                    get_searchstories();
             ?>
 
         </div>

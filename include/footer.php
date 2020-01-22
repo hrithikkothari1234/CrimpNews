@@ -41,6 +41,19 @@
         <script>
             // Get the current year for the copyright
             $('#year').text(new Date().getFullYear());
+            
+            // search to work when enter-key pressed
+            $(".search-input").keyup(function(event) {
+                if (event.keyCode === 13) {
+                    search();
+                }
+            });
+
+            // search clicked
+            function search(){
+                var value = $(".search-input").val();
+                window.location.replace('index.php?q='+value);
+            }
         </script>
 
     </body>
