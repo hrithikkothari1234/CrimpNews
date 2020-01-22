@@ -67,7 +67,7 @@
     <div class="nav-lower">
         <ul class="nav pull-left">
             <li>
-                <a href="index.php">
+                <a href="/">
                     <i class="fa fa-newspaper-o mr-2 fa-fw"></i>
                     Top Stories
                 </a>
@@ -78,51 +78,54 @@
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <div class="dropdown-content">
-                    <a href="index.php?q=India">
+                    <a href="/?q=India">
                         <i class="fa fa-flag mr-1 fa-fw"></i>
                         India
                     </a>
                     <hr>
-                    <a href="index.php?q=World">
+                    <a href="/?q=World">
                         <i class="fa fa-globe mr-1 fa-fw"></i>
                         World
                     </a>
                     <hr>
-                    <a href="index.php?q=Tech">
+                    <a href="/?q=Tech">
                         <i class="fa fa-desktop mr-1 fa-fw"></i>
                         Tech
                     </a>
                     <hr>
-                    <a href="index.php?q=Business">
+                    <a href="/?q=Business">
                         <i class="fa fa-pencil mr-1 fa-fw"></i>
                         Firm
                     </a>
                     <hr>
-                    <a href="index.php?q=Budget">
+                    <a href="/?q=Budget">
                         <i class="fa fa-money mr-1 fa-fw"></i>
                         Budget
                     </a>
                     <hr>
-                    <a href="index.php?q=Industry">
+                    <a href="/?q=Industry">
                         <i class="fa fa-industry mr-1 fa-fw"></i>
                         Industry
                     </a>
                     <hr>
-                    <a href="index.php?q=Entertainment">
+                    <a href="/?q=Entertainment">
                         <i class="fa fa-gamepad mr-1 fa-fw"></i>
                         Fun
                     </a>
                     <hr>
-                    <a href="index.php?q=Science">
+                    <a href="/?q=Science">
                         <i class="fa fa-flask mr-1 fa-fw"></i>
                         Science
                     </a>
                     <hr>
-                    <a href="index.php?q=Sports">
+                    <a href="/?q=Sports">
                         <i class="fa fa-bicycle  mr-1 fa-fw"></i>
                         Sports
                     </a>
                 </div>
             </li>
         </ul>
+        <div class="search-toggle-button pull-right">
+            <i class="fa fa-search"></i>
+        </div>
     </div>

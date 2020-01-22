@@ -73,6 +73,18 @@ body {
     border: none;
 }
 
+.search-toggle-button  {
+    margin-right: 10%;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.search-toggle-button:hover {
+    cursor: pointer;
+}
+
+
 /***********************/
 /* dropdown categories */
 
