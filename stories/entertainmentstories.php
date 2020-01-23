@@ -1,6 +1,5 @@
 <?php
 
-function get_entertainmentstories(){
 
     echo
     '
@@ -163,4 +162,4 @@ function get_entertainmentstories(){
 
     echo "</div>"; // container ends
 
-}
+?>

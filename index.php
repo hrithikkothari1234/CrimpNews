@@ -1,24 +1,15 @@
 <?php require_once('include/header.php'); ?>
 <?php require_once('include/weather.php'); ?>
-            <!-- stories -->
 <?php require_once('stories/topstories.php'); ?>
-<?php require_once('stories/indiastories.php'); ?>
-<?php require_once('stories/worldstories.php'); ?>
-<?php require_once('stories/techstories.php'); ?>
-<?php require_once('stories/budgetstories.php'); ?>
-<?php require_once('stories/businessstories.php'); ?>
-<?php require_once('stories/industrystories.php'); ?>
-<?php require_once('stories/entertainmentstories.php'); ?>
-<?php require_once('stories/sciencestories.php'); ?>
-<?php require_once('stories/sportsstories.php'); ?>
-<?php require_once('stories/searchstories.php'); ?>
+
 
 <!-- search field visible when icon clicked -->
 <div class="row search-field" id="search-box">
     <div class="offset-sm-2 col-sm-8">
         <div class="row mb-4">
             <div class="form-group col-sm-10">
-                <input type="text" placeholder="Search topics or categories" class="search-input form-control form-control-underlined">
+                <input type="text" placeholder="Search topics or categories" 
+                class="search-input form-control form-control-underlined" autofocus>
             </div>
             <div class="form-group col-sm-2">
                 <button class="btn btn-primary rounded-pill btn-block shadow-sm" onclick="search()">
@@ -37,28 +28,29 @@
         <div class="page-content col-lg-8">
 
             <?php
+                //Stories
                 if(!isset($_GET['q']))
                     get_topstories();
                 else if($_GET['q'] == 'India')
-                    get_indiastories();
+                    require_once('stories/indiastories.php');
                 else if($_GET['q'] == 'World')
-                    get_worldstories();
+                    require_once('stories/worldstories.php');
                 else if($_GET['q'] == 'Tech' || $_GET['q'] == 'Technology')
-                    get_techstories();
+                    require_once('stories/techstories.php');
                 else if($_GET['q'] == 'Budget')
-                    get_budgetstories();
+                    require_once('stories/budgetstories.php');
                 else if($_GET['q'] == 'Business')
-                    get_businessstories();
+                    require_once('stories/businessstories.php');
                 else if($_GET['q'] == 'Industry')
-                    get_industrystories();
+                    require_once('stories/industrystories.php');
                 else if($_GET['q'] == 'Entertainment')
-                    get_entertainmentstories();
+                    require_once('stories/entertainmentstories.php');
                 else if($_GET['q'] == 'Science')
-                    get_sciencestories();
+                    require_once('stories/sciencestories.php');
                 else if($_GET['q'] == 'Sports')
-                    get_sportsstories();
+                    require_once('stories/sportsstories.php');
                 else
-                    get_searchstories();
+                    require_once('stories/searchstories.php');
             ?>
 
         </div>

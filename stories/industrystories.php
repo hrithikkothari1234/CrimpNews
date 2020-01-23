@@ -1,6 +1,5 @@
 <?php
 
-function get_industrystories(){
 
     echo
     '
@@ -111,8 +110,6 @@ function get_industrystories(){
     } // loop ends
 
     echo "</div>"; // container ends
-
-}
 
 
  ?>

@@ -1,6 +1,5 @@
 <?php
 
-function get_worldstories(){
 
     echo
     '
@@ -162,8 +161,6 @@ function get_worldstories(){
     }   // loop ends
 
     echo "</div>"; // container ends
-
-}
 
 
  ?>

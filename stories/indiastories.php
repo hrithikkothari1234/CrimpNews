@@ -1,7 +1,5 @@
 <?php
 
-function get_indiastories(){
-
     echo
     '
     <h6 class="news-container-title-box">
@@ -158,8 +156,6 @@ function get_indiastories(){
     }   // loop ends
 
     echo "</div>"; // container ends
-
-}
 
 
  ?>

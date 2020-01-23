@@ -1,6 +1,5 @@
 <?php
 
-function get_businessstories(){
 
     echo
     '
@@ -158,8 +157,6 @@ function get_businessstories(){
     }   // loop ends
 
     echo "</div>"; // container ends
-
-}
 
 
  ?>

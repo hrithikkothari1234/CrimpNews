@@ -1,7 +1,5 @@
 <?php
 
-function get_techstories(){
-
     echo
     '
     <h6 class="news-container-title-box">
@@ -110,8 +108,6 @@ function get_techstories(){
     } // loop ends
 
     echo "</div>"; // container ends
-
-}
 
 
  ?>

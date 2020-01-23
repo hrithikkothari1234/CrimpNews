@@ -1,7 +1,5 @@
+
 <?php
-
-function get_budgetstories(){
-
     echo
     '
     <h6 class="news-container-title-box">
@@ -110,8 +108,5 @@ function get_budgetstories(){
     } // loop ends
 
     echo "</div>"; // container ends
-
-}
-
 
  ?>

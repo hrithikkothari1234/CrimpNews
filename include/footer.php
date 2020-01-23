@@ -52,7 +52,7 @@
             // search clicked
             function search(){
                 var value = $(".search-input").val();
-                window.location.replace('index.php?q='+value);
+                window.location.replace('/?q='+value);
             }
         </script>
 

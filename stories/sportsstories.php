@@ -1,6 +1,5 @@
 <?php
 
-function get_sportsstories(){
 
     echo
     '
@@ -112,4 +111,4 @@ function get_sportsstories(){
 
     echo "</div>"; // container ends
 
-}
+?>

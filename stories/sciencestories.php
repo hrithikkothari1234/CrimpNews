@@ -1,6 +1,5 @@
 <?php
 
-function get_sciencestories(){
 
     echo
     '
@@ -112,4 +111,4 @@ function get_sciencestories(){
 
     echo "</div>"; // container ends
 
-}
+?>
