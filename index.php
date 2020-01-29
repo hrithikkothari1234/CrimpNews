@@ -49,6 +49,8 @@
                     require_once('stories/sciencestories.php');
                 else if($_GET['q'] == 'Sports')
                     require_once('stories/sportsstories.php');
+                else if($_GET['q'] == 'Popular')
+                    require_once('stories/popularstories.php');
                 else
                     require_once('stories/searchstories.php');
             ?>
