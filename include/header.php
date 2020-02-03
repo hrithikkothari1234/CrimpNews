@@ -123,7 +123,7 @@
                         Sports
                     </a>
                     <hr>
-                    <a href="index.php?q=Popular">
+                    <a href="/?q=Popular">
                         <i class="fa fa-universal-access ml-1 mr-1 fa-fw"></i>
                         Popular
                     </a>
