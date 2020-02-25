@@ -14,6 +14,8 @@
 ## Example Images:
 
 ### Desktop
-![desktop](https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/desktop_view.png)
+<img src="https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/desktop_view.png" 
+width="100" height="100">
 ### Mobile
-![mobile](https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/mobile_view.png =100x100)
+<img src="https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/mobile_view.png" 
+width="100" height="100">
