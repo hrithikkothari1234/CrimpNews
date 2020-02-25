@@ -9,3 +9,11 @@
 * PHP
 * XML : RSS Feeds
 * MySQL
+* OpenWeatherMap Api
+
+## Example Images:
+
+### Desktop
+!(https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/desktop_view.png)
+### Mobile
+!(https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/mobile_view.png)
