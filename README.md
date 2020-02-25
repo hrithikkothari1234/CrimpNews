@@ -16,4 +16,4 @@
 ### Desktop
 ![desktop](https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/desktop_view.png)
 ### Mobile
-![mobile](https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/mobile_view.png)
+![mobile](https://raw.githubusercontent.com/hrithikkothari1234/CrimpNewsPortal/master/images-readme/mobile_view.png=100x100)
