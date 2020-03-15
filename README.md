@@ -1,5 +1,5 @@
-# News Portal for Crimp News
-<br>
+# News Portal for Crimp News</br>
+
 ### News Portal that fetches news content from various news providers like Google News, Livemint, Economic Times, News18, Times of India , etc by using their RSS Feeds.
 
 ## Tech Stack
